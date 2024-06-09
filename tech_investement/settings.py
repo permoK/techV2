@@ -32,9 +32,9 @@ ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.107","192.168.16.105
 # ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.102","mykey.pythonanywhere.com"]
 # >>>>>>> main
 
-CORS_ORIGIN_WHITELIST = [
-    'https://codius.up.railway.app',
-]
+# CORS_ORIGIN_WHITELIST = [
+#     'https://codius.up.railway.app',
+# ]
 
 SITE_ID = 1
 
@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'investor.apps.InvestorConfig',
 
-    'corsheaders',
+    # 'corsheaders',
 
     # ALLAUTH
     'allauth',
@@ -73,7 +73,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
