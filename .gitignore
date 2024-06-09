@@ -1,4 +1,4 @@
 quickstart.py
 credentials.json
 token.json
-../techv2-venv/
+techv2-venv
