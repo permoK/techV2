@@ -36,6 +36,8 @@ ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.107","192.168.16.105
 #     'https://codius.up.railway.app',
 # ]
 
+
+
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = [
@@ -86,6 +88,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'tech_investement.urls'
+
+CSRF_TRUSTED_ORIGINS = [
+        'https://codius.tech',
+        # Add any other trusted origins here
+        ]
 
 TEMPLATES = [
     {
