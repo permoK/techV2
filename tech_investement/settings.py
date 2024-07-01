@@ -32,10 +32,14 @@ ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.107","192.168.16.105
 # ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.102","mykey.pythonanywhere.com"]
 # >>>>>>> main
 
-CORS_ORIGIN_WHITELIST = [
+# CORS_ORIGIN_WHITELIST = [
+#     'https://codius.up.railway.app',
+# ]
+CSRF_TRUSTED_ORIGINS = [
     'https://codius.up.railway.app',
+    'https://codius.tech',
+    # Add any other trusted origins here
 ]
-
 
 
 SITE_ID = 1
