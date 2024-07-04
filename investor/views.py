@@ -729,12 +729,12 @@ def refresh_balance(request):
 # mpesa callback test
 @csrf_exempt
 def callback(request):
+    callback = Callback.objects.all()
     if request.method == 'POST':
         try:
             # Parse JSON data from the request body
             data = json.loads(request.body)
             
-            callback = Callback.objects.all()
 
             addResult = Callback(result=data)
 
@@ -750,5 +750,5 @@ def callback(request):
             # Handle case where request body is not valid JSON
             return JsonResponse({'error': 'Invalid JSON'}, status=400)
     
-    return render(request, 'callback.html', )
+    return render(request, 'callback.html', {"callback":callback} )
 
