@@ -15,9 +15,10 @@ from django.utils import timezone
 from datetime import datetime
 from django.http import HttpResponse
 
+import json
 
 # import models
-from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase
+from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase, Callback
 
 # import forms
 from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordForm, deposit_form, withdraw_form, searchForm, StkpushForm, transactions_id_form, letterForm, user_deposit_form
@@ -724,4 +725,30 @@ def refresh_balance(request):
     balance = total_amount
     return HttpResponse(balance)
 
+
+# mpesa callback test
+@csrf_exempt
+def callback(request):
+    if request.method == 'POST':
+        try:
+            # Parse JSON data from the request body
+            data = json.loads(request.body)
+            
+            callback = Callback.objects.all()
+
+            addResult = Callback(result=data)
+
+            addResult.save()
+            # Extract required information
+            # result_desc = data['Result']['ResultDesc']
+            
+            # For debugging: print the data to the console
+            # Return a JsonResponse or HttpResponse with the extracted data
+            # return JsonResponse({'ResultDesc': result_desc})
+        
+        except json.JSONDecodeError:
+            # Handle case where request body is not valid JSON
+            return JsonResponse({'error': 'Invalid JSON'}, status=400)
+    
+    return render(request, 'callback.html', )
 

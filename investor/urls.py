@@ -86,6 +86,7 @@ urlpatterns = [
     
     # refresh_balance
     path('refresh_balance/', views.refresh_balance, name='refresh_balance'),
+    path('callback', views.callback, name='callback')
    ]
 
 if settings.DEBUG:
