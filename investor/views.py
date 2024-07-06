@@ -16,12 +16,24 @@ from datetime import datetime
 from django.http import HttpResponse
 
 import json
+import requests
+from requests.auth import HTTPBasicAuth
+import base64
+
+import uuid
 
 # import models
 from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase, Callback
 
 # import forms
 from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordForm, deposit_form, withdraw_form, searchForm, StkpushForm, transactions_id_form, letterForm, user_deposit_form
+
+########## global variable #######
+base_url = 'https://codius.up.railway.app/'
+key = 'nAbuuqCD0dMH3uhXSO5A2yY7rd1HACYE'
+secret = '3ZnvWnVqFqPgvUXF'
+####################################
+
 
 # Create your views here.
 
@@ -725,6 +737,66 @@ def refresh_balance(request):
     balance = total_amount
     return HttpResponse(balance)
 
+######################### ACCESS TOKEN ##################################
+def get_access_token():
+    consumer_key = key
+    consumer_secret = secret
+    endpoint = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+    data = r.json()
+    return data['access_token']
+
+########################## END ACCESS TOKEN #############################
+
+
+######################### STK #################################
+def stkpush(request):
+    # phone = request.POST.get('phone')
+    # amount = request.POST.get('amount')
+
+    form = StkpushForm()
+
+    return render(request, 'user/deposit.html', {"form":form})
+
+
+def init_stk(request):
+
+    if request.method == 'POST':
+        form = StkpushForm(request.POST)
+        if form.is_valid():
+            phone = form.cleaned_data['phone_number']
+            amount = form.cleaned_data['amount']
+
+            endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
+            access_token = get_access_token()
+            headers = { "Authorization": f"Bearer {access_token}" }
+            my_endpoint = base_url 
+            Timestamp = datetime.now()
+            times = Timestamp.strftime("%Y%m%d%H%M%S")
+            password = "174379" + "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919" + times
+            datapass = base64.b64encode(password.encode('utf-8')).decode('utf-8')  # Decode to string
+
+            data = {
+                    "BusinessShortCode": "174379",
+                    "Password": datapass,
+                    "Timestamp": times,
+                    "TransactionType": "CustomerPayBillOnline", # for paybill - CustomerPayBillOnline
+                    "PartyA": phone,
+                    "PartyB": "174379",
+                    "PhoneNumber": phone, # fill with your phone number
+                    "CallBackURL": my_endpoint + "callback",
+                    "AccountReference": "TestPay",
+                    "TransactionDesc": "HelloTest",
+                    "Amount": amount
+                    }
+            res = requests.post(endpoint, json=data, headers=headers)
+            response = res.json()
+            context = { "response":response }
+
+    return render(request, 'user/stkresult.html', context)   
+
+####################### END STK ###############################
 
 # mpesa callback test
 @csrf_exempt

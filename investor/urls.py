@@ -86,7 +86,10 @@ urlpatterns = [
     
     # refresh_balance
     path('refresh_balance/', views.refresh_balance, name='refresh_balance'),
+    path('stk', views.stkpush, name='stk'),
+    path('stkpush', views.init_stk, name='stkpush'),
     path('callback', views.callback, name='callback')
+    
    ]
 
 if settings.DEBUG:
