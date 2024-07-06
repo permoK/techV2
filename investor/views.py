@@ -751,6 +751,7 @@ def get_access_token():
 
 
 ######################### STK #################################
+@csrf_exempt
 def stkpush(request):
     # phone = request.POST.get('phone')
     # amount = request.POST.get('amount')
