@@ -26,22 +26,12 @@ SECRET_KEY = 'django-insecure-ixbwzzns+pcr206)uam#@gftm&h3!k711!x290@z%w-=z#e=5+
 DEBUG = True
 
 # <<<<<<< master
-ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.107","192.168.16.105","192.168.100.119","192.168.43.53","10.0.39.242", ".vercel.app","*", "codius.up.railway.app","codius.tech"]
+ALLOWED_HOSTS = ["*"]
 # =======
 
-# ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.102","mykey.pythonanywhere.com"]
-# >>>>>>> main
-
-# CORS_ORIGIN_WHITELIST = [
-#     'https://codius.up.railway.app',
-# ]
 CSRF_TRUSTED_ORIGINS = [
     'https://codius.up.railway.app',
-    'https://codius.tech',
-    'https://codius.up.railway.app/'
-    # Add any other trusted origins here
 ]
-
 
 SITE_ID = 1
 
