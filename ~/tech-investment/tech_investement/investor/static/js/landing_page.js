@@ -13,7 +13,7 @@ CloseBtnId.addEventListener("click", () => {
 });
 
 // ==== Animate on Scroll Initialize  ==== //
-// AOS.init();
+AOS.init();
 
 // ==== GSAP Animations ==== //
 // ==== LOGO  ==== //
@@ -28,8 +28,8 @@ gsap.from(".nav_menu_list .nav_menu_item", {
   opacity: 0,
   y: -10,
   delay: 1.4,
-  duration: 0.1,
-  stagger: 0.0,
+  duration: 0.5,
+  stagger: 0.3,
 });
 // ==== TOGGLE BTN ==== //
 gsap.from(".toggle_btn", {

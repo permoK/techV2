@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ["192.168.100.119", "127.0.0.1","192.168.16.107","192.168.16.105
 CSRF_TRUSTED_ORIGINS = [
     'https://codius.up.railway.app',
     'https://codius.tech',
+    'https://codius.up.railway.app/'
     # Add any other trusted origins here
 ]
 

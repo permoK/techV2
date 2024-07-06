@@ -171,7 +171,7 @@ h6 span{
   border: none;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
-  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  box-shadow: 0 4px 8px 0 #2b4622;
 }
 .form-style:focus,
 .form-style:active {
