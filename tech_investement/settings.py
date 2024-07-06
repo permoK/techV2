@@ -33,6 +33,12 @@ CSRF_TRUSTED_ORIGINS = [
     'https://codius.up.railway.app',
 ]
 
+
+CORS_ALLOWED_ORIGINS = [
+    'https://codius.up.railway.app',
+]
+
+
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = [
