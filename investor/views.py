@@ -760,7 +760,7 @@ def stkpush(request):
 
     return render(request, 'user/deposit.html', {"form":form})
 
-
+@csrf_exempt
 def init_stk(request):
 
     if request.method == 'POST':
