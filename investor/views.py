@@ -828,47 +828,6 @@ def callback(request):
     return render(request, 'callback.html', {"callback":callback} )
 
 
-####################### inta ###############################
-
-from .forms import MpesaExpressForm
-from .models import MpesaTransaction
-
-class MpesaExpressView(View):
-    template_name = 'mpesa_express.html'
-
-    def get(self, request):
-        form = MpesaExpressForm()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request):
-        form = MpesaExpressForm(request.POST)
-        if form.is_valid():
-            amount = form.cleaned_data['amount']
-            phone_number = form.cleaned_data['phone_number']
-            description = form.cleaned_data.get('description', 'M-Pesa Payment')
-            reference = str(uuid.uuid4())[:8]  # Generate a unique reference
-
-            # Create a transaction record
-            transaction = MpesaTransaction.objects.create(
-                amount=amount,
-                phone_number=phone_number,
-                reference=reference,
-                description=description
-            )
-
-            # Here you would typically integrate with the actual M-Pesa API
-            # For this example, we'll just simulate a successful transaction
-            transaction.status = 'SUCCESS'
-            transaction.save()
-
-            messages.success(request, 'Payment initiated successfully')
-            return redirect('mpesa_success')
-        
-        return render(request, self.template_name, {'form': form})
-
-def mpesa_success(request):
-    return render(request, 'mpesa_success.html')
-
 from .tasks import generate_profit
 
 # Start the task initially
