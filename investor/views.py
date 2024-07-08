@@ -747,6 +747,7 @@ def get_access_token():
 
     r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
     data = r.json()
+    # print(r.text.encode('utf8').access_token)
     return data['access_token']
 
 ########################## END ACCESS TOKEN #############################
