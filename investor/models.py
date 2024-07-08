@@ -173,21 +173,35 @@ class Purchase(models.Model):
     image = models.FileField(upload_to='assets/', null=True, blank=True)
     purchase_date = models.DateTimeField(default=timezone.now)
     released = models.BooleanField(default=False)
+    profit_released_date = models.DateTimeField(null=True, blank=True)
 
-    def release_item(self):
-        if self.item.is_released() and not self.released:
-            # Perform release operation
-            # For example, add released amount to user's balance
-            # or grant access to some resource, etc.
-            self.user.UserAccount.balance += self.item.release_amount
-            self.user.UserAccount.save()
+    def release_profit(self):
+        if not self.released:
+            user_account = UserAccount.objects.get(user=self.user)
+            user_account.balance += self.profit
+            user_account.save()
+
             self.released = True
+            self.profit_released_date = timezone.now()
             self.save()
-
     def __str__(self):
         return f"{self.user.username} purchased {self.item.name} on {self.purchase_date}"
 
 
-class Callback(models.Model):
-    result = models.CharField()
-    date = models.DateTimeField(default=timezone.now)
+# class Callback(models.Model):
+#     result = models.CharField()
+#     date = models.DateTimeField(default=timezone.now)
+
+
+############ inta ###############################
+class MpesaTransaction(models.Model):
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    phone_number = models.CharField(max_length=15)
+    reference = models.CharField(max_length=50, unique=True)
+    description = models.CharField(max_length=100)
+    status = models.CharField(max_length=20, default='PENDING')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.reference} - {self.amount}"

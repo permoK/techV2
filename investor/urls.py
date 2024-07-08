@@ -7,6 +7,8 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import MpesaExpressView, mpesa_success
+
 urlpatterns = [
     #users
     path('', views.landing_page, name='landing_page'),
@@ -88,7 +90,11 @@ urlpatterns = [
     path('refresh_balance/', views.refresh_balance, name='refresh_balance'),
     path('stk', views.stkpush, name='stk'),
     path('stkpush', views.init_stk, name='stkpush'),
-    path('callback', views.callback, name='callback')
+    path('callback', views.callback, name='callback'),
+
+
+    path('mpesa-express/', MpesaExpressView.as_view(), name='mpesa_express'),
+    path('mpesa-success/', mpesa_success, name='mpesa_success'),
     
    ]
 

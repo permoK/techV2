@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'investor.apps.InvestorConfig',
 
+    # jobs
+    'django_cron',
+
     # 'corsheaders',
 
     # ALLAUTH
@@ -90,10 +93,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tech_investement.urls'
 
-CSRF_TRUSTED_ORIGINS = [
-        'https://codius.tech',
-        # Add any other trusted origins here
-        ]
 
 TEMPLATES = [
     {
@@ -231,4 +230,35 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = ''
 
+# jobs
+CRON_CLASSES = [
+    'investor.cron.DailyProfitReleaseCronJob',
+]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'cron.log',
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file'],
+        'level': 'INFO',
+    },
+}
+
+
+# settings.py
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
 

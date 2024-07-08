@@ -71,7 +71,7 @@ class searchForm(forms.Form):
 
 class StkpushForm(forms.Form):
     # phone_number must start with 254 and be 12 digits long
-    phone_number = forms.CharField(max_length=12)
+    phone_number = forms.IntegerField()
     amount = forms.IntegerField()
     # account_reference = forms.CharField(max_length=12)
     # transaction_description = forms.CharField(max_length=12)
@@ -98,3 +98,12 @@ class letterForm(forms.Form):
     class Meta:
         fields = ["message","color", "font"]
 
+
+
+####################### inta ##########################
+
+class MpesaExpressForm(forms.Form):
+    amount = forms.DecimalField(max_digits=10, decimal_places=2)
+    phone_number = forms.CharField(max_length=15)
+    email = forms.EmailField(required=False)
+    description = forms.CharField(max_length=100, required=False)

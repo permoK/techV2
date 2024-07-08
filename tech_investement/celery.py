@@ -31,22 +31,3 @@ app.conf.beat_schedule = {
 def debug_task(self):
     print(f'Request: {self.request!r}')
 
-
-
-
-# from celery import Celery
-# from django.conf import settings
-# import os
-
-
-# # Set the Django settings module for Celery
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tech_investement.settings')
-
-# app = Celery('tech_investement')
-
-# # Configure Celery to use Django settings
-# app.config_from_object('django.conf:settings', namespace='CELERY')
-
-# # Load tasks from all registered apps
-
-

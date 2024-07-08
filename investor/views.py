@@ -15,6 +15,8 @@ from django.utils import timezone
 from datetime import datetime
 from django.http import HttpResponse
 
+from django.views import View
+
 import json
 import requests
 from requests.auth import HTTPBasicAuth
@@ -23,7 +25,7 @@ import base64
 import uuid
 
 # import models
-from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase, Callback
+from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase
 
 # import forms
 from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordForm, deposit_form, withdraw_form, searchForm, StkpushForm, transactions_id_form, letterForm, user_deposit_form
@@ -623,7 +625,7 @@ def purchase_item(request, id):
             user.bonus = total_balance
         user.save()
         # save the purchase
-        purchase = Purchase(user=user_profile, item=items, price=items.price, release_amount=items.release_amount , title=items.title, description=items.description, image=items.image.url)
+        purchase = Purchase(user=user_profile, item=items, price=items.price, release_amount=items.release_amount, title=items.title, description=items.description, image=items.image.url)
         purchase.save()
         messages.success(request, 'purchased successful')
         return redirect('purchase_success',id=id)
@@ -824,4 +826,51 @@ def callback(request):
             return JsonResponse({'error': 'Invalid JSON'}, status=400)
     
     return render(request, 'callback.html', {"callback":callback} )
+
+
+####################### inta ###############################
+
+from .forms import MpesaExpressForm
+from .models import MpesaTransaction
+
+class MpesaExpressView(View):
+    template_name = 'mpesa_express.html'
+
+    def get(self, request):
+        form = MpesaExpressForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = MpesaExpressForm(request.POST)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            phone_number = form.cleaned_data['phone_number']
+            description = form.cleaned_data.get('description', 'M-Pesa Payment')
+            reference = str(uuid.uuid4())[:8]  # Generate a unique reference
+
+            # Create a transaction record
+            transaction = MpesaTransaction.objects.create(
+                amount=amount,
+                phone_number=phone_number,
+                reference=reference,
+                description=description
+            )
+
+            # Here you would typically integrate with the actual M-Pesa API
+            # For this example, we'll just simulate a successful transaction
+            transaction.status = 'SUCCESS'
+            transaction.save()
+
+            messages.success(request, 'Payment initiated successfully')
+            return redirect('mpesa_success')
+        
+        return render(request, self.template_name, {'form': form})
+
+def mpesa_success(request):
+    return render(request, 'mpesa_success.html')
+
+from .tasks import generate_profit
+
+# Start the task initially
+generate_profit.delay()
 
