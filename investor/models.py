@@ -188,9 +188,9 @@ class Purchase(models.Model):
         return f"{self.user.username} purchased {self.item.name} on {self.purchase_date}"
 
 
-# class Callback(models.Model):
-#     result = models.CharField()
-#     date = models.DateTimeField(default=timezone.now)
+class Callback(models.Model):
+    result = models.CharField()
+    date = models.DateTimeField(default=timezone.now)
 
 
 ############ inta ###############################

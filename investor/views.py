@@ -25,7 +25,7 @@ import base64
 import uuid
 
 # import models
-from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase 
+from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase, Callback
 
 # import forms
 from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordForm, deposit_form, withdraw_form, searchForm, StkpushForm, transactions_id_form, letterForm, user_deposit_form
