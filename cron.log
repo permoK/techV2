@@ -187,3 +187,80 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 /home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
 Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 784, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 755, in get_access_token
+    access_token = r.get("access_token")
+AttributeError: 'Response' object has no attribute 'get'
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 784, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 755, in get_access_token
+    access_token = r.get("access_token")
+AttributeError: 'Response' object has no attribute 'get'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 751, in get_access_token
+    if response.status_code == 200:
+NameError: name 'response' is not defined
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 751, in get_access_token
+    if response.status_code == 200:
+NameError: name 'response' is not defined
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 753, in get_access_token
+    data = response.json()
+NameError: name 'response' is not defined
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
