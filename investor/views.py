@@ -763,52 +763,166 @@ def get_access_token():
 ######################### STK #################################
 @csrf_exempt
 def stkpush(request):
-    # phone = request.POST.get('phone')
-    # amount = request.POST.get('amount')
 
     form = StkpushForm()
 
     return render(request, 'user/deposit.html', {"form":form})
 
+# @csrf_exempt
+# def init_stk(request):
+
+#     if request.method == 'POST':
+#         form = StkpushForm(request.POST)
+#         if form.is_valid():
+#             phone = form.cleaned_data['phone_number']
+#             amount = form.cleaned_data['amount']
+
+#             endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
+#             access_token = get_access_token()
+#             headers = { "Authorization": f"Bearer {access_token}" }
+#             my_endpoint = base_url 
+#             Timestamp = datetime.now()
+#             times = Timestamp.strftime("%Y%m%d%H%M%S")
+#             password = "174379" + "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919" + times
+#             datapass = base64.b64encode(password.encode('utf-8')).decode('utf-8')  # Decode to string
+
+#             data = {
+#                     "BusinessShortCode": "174379",
+#                     "Password": datapass,
+#                     "Timestamp": times,
+#                     "TransactionType": "CustomerPayBillOnline", # for paybill - CustomerPayBillOnline
+#                     "PartyA": phone,
+#                     "PartyB": "174379",
+#                     "PhoneNumber": phone, # fill with your phone number
+#                     "CallBackURL": my_endpoint + "callback",
+#                     "AccountReference": "TestPay",
+#                     "TransactionDesc": "HelloTest",
+#                     "Amount": amount
+#                     }
+#             res = requests.post(endpoint, json=data, headers=headers)
+#             response = res.json()
+#             context = { "response":response }
+
+#     return render(request, 'user/stkresult.html', context)   
+
 @csrf_exempt
 def init_stk(request):
-
     if request.method == 'POST':
         form = StkpushForm(request.POST)
         if form.is_valid():
             phone = form.cleaned_data['phone_number']
             amount = form.cleaned_data['amount']
 
+            # Set a session flag to indicate payment initiation
+            request.session['payment_initiated'] = True
+
             endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
             access_token = get_access_token()
-            headers = { "Authorization": f"Bearer {access_token}" }
-            my_endpoint = base_url 
+            headers = {"Authorization": f"Bearer {access_token}"}
+            my_endpoint = base_url
             Timestamp = datetime.now()
             times = Timestamp.strftime("%Y%m%d%H%M%S")
             password = "174379" + "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919" + times
             datapass = base64.b64encode(password.encode('utf-8')).decode('utf-8')  # Decode to string
 
             data = {
-                    "BusinessShortCode": "174379",
-                    "Password": datapass,
-                    "Timestamp": times,
-                    "TransactionType": "CustomerPayBillOnline", # for paybill - CustomerPayBillOnline
-                    "PartyA": phone,
-                    "PartyB": "174379",
-                    "PhoneNumber": phone, # fill with your phone number
-                    "CallBackURL": my_endpoint + "callback",
-                    "AccountReference": "TestPay",
-                    "TransactionDesc": "HelloTest",
-                    "Amount": amount
-                    }
+                "BusinessShortCode": "174379",
+                "Password": datapass,
+                "Timestamp": times,
+                "TransactionType": "CustomerPayBillOnline",
+                "PartyA": phone,
+                "PartyB": "174379",
+                "PhoneNumber": phone,
+                "CallBackURL": my_endpoint + "callback",
+                "AccountReference": "TestPay",
+                "TransactionDesc": "HelloTest",
+                "Amount": amount
+            }
             res = requests.post(endpoint, json=data, headers=headers)
             response = res.json()
-            context = { "response":response }
+            context = {"response": response}
 
-    return render(request, 'user/stkresult.html', context)   
+            return render(request, 'user/stkresult.html', context)
+
+    return render(request, 'user/stkresult.html', {})
 
 ####################### END STK ###############################
 
+###################### Callback ############################
+
+# class MpesaStkPushCallbackView(View):
+#     def post(self, request):
+#         data = json.loads(request.body)['Body']['stkCallback']
+        
+#         if data['ResultCode'] == 0:
+#             # if payment was successful
+#              try:
+#                 with atomic():
+#                     MpesaPayment.objects.create(
+#                         MerchantRequestID=data['MerchantRequestID'],
+#                         CheckoutRequestID=data['CheckoutRequestID'],
+#                         ResultCode=data['ResultCode'],
+#                         ResultDesc=data['ResultDesc'],
+#                         Amount=data['CallbackMetadata']['Item'][0]['Value'],
+#                         MpesaReceiptNumber=data['CallbackMetadata']['Item'][1]['Value'],
+#                         Balance=data['CallbackMetadata']['Item'][2]['Value'],
+#                         TransactionDate=data['CallbackMetadata']['Item'][3]['Value'],
+#                         PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
+#                     )
+#                     # order_id = request.session['order_id']
+#                     # order = get_object_or_404(Order, id=order_id)
+#                     # order.paid = True
+#                     # order.save()
+#                     return redirect(reverse('dashboard'))
+#              except IntegrityError:
+#                 return HttpResponse('Payment already exists')
+
+#         return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
+
+class MpesaStkPushCallbackView(View):
+    def post(self, request):
+        data = json.loads(request.body)['Body']['stkCallback']
+        
+        if data['ResultCode'] == 0:
+            # if payment was successful
+            try:
+                with atomic():
+                    MpesaPayment.objects.create(
+                        MerchantRequestID=data['MerchantRequestID'],
+                        CheckoutRequestID=data['CheckoutRequestID'],
+                        ResultCode=data['ResultCode'],
+                        ResultDesc=data['ResultDesc'],
+                        Amount=data['CallbackMetadata']['Item'][0]['Value'],
+                        MpesaReceiptNumber=data['CallbackMetadata']['Item'][1]['Value'],
+                        Balance=data['CallbackMetadata']['Item'][2]['Value'],
+                        TransactionDate=data['CallbackMetadata']['Item'][3]['Value'],
+                        PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
+                    )
+
+                    # Clear the session flag
+                    if 'payment_initiated' in request.session:
+                        del request.session['payment_initiated']
+                    
+                    return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
+            except IntegrityError:
+                return HttpResponse('Payment already exists')
+
+        return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
+
+
+########################### End Callback #################################
+
+
+########################## check payment status ###################
+
+def check_payment_status(request):
+    if request.session.get('payment_initiated'):
+        return redirect('dashboard')  # Change 'dashboard' to your actual URL name
+
+    # If no payment initiated, handle accordingly
+    return redirect('init_stk')  # Change 'home' to your default page URL name
+
+########################## end check payment status ##################
 # mpesa callback test
 @csrf_exempt
 def callback(request):
@@ -818,16 +932,9 @@ def callback(request):
             # Parse JSON data from the request body
             data = json.loads(request.body)
             
-
             addResult = Callback(result=data)
 
             addResult.save()
-            # Extract required information
-            # result_desc = data['Result']['ResultDesc']
-            
-            # For debugging: print the data to the console
-            # Return a JsonResponse or HttpResponse with the extracted data
-            # return JsonResponse({'ResultDesc': result_desc})
         
         except json.JSONDecodeError:
             # Handle case where request body is not valid JSON

@@ -2,7 +2,8 @@
 
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from . import views
+from . import views 
+from .views import *
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -90,7 +91,11 @@ urlpatterns = [
     path('refresh_balance/', views.refresh_balance, name='refresh_balance'),
     path('stk', views.stkpush, name='stk'),
     path('stkpush', views.init_stk, name='stkpush'),
-    path('callback', views.callback, name='callback'),
+    # path('callback', views.callback, name='callback'),
+
+    path('callback', MpesaStkPushCallbackView.as_view(), name='mpesa-stk-push-callback'),
+
+    path('check-payment-status/', check_payment_status, name='check_payment_status'),
 
    ]
 
