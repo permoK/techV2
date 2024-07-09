@@ -746,7 +746,7 @@ def get_access_token():
     endpoint = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
 
     r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
-    data = r.json()
+    data = json.loads(r.text)
 # Check if the request was successful
     if r.status_code == 200:
         # Parse JSON content

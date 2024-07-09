@@ -422,3 +422,8 @@ LINE 1: SELECT COUNT(*) AS "__count" FROM "investor_mpesapayment"
 
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
