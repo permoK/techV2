@@ -750,7 +750,7 @@ def get_access_token():
 # Check if the request was successful
     if r.status_code == 200:
         # Parse JSON content
-        data = r.json()
+        data = json.loads(r.text)
         # Access the token
         access_token = data.get("access_token")
         return access_token
