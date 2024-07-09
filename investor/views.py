@@ -768,42 +768,6 @@ def stkpush(request):
 
     return render(request, 'user/deposit.html', {"form":form})
 
-# @csrf_exempt
-# def init_stk(request):
-
-#     if request.method == 'POST':
-#         form = StkpushForm(request.POST)
-#         if form.is_valid():
-#             phone = form.cleaned_data['phone_number']
-#             amount = form.cleaned_data['amount']
-
-#             endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
-#             access_token = get_access_token()
-#             headers = { "Authorization": f"Bearer {access_token}" }
-#             my_endpoint = base_url 
-#             Timestamp = datetime.now()
-#             times = Timestamp.strftime("%Y%m%d%H%M%S")
-#             password = "174379" + "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919" + times
-#             datapass = base64.b64encode(password.encode('utf-8')).decode('utf-8')  # Decode to string
-
-#             data = {
-#                     "BusinessShortCode": "174379",
-#                     "Password": datapass,
-#                     "Timestamp": times,
-#                     "TransactionType": "CustomerPayBillOnline", # for paybill - CustomerPayBillOnline
-#                     "PartyA": phone,
-#                     "PartyB": "174379",
-#                     "PhoneNumber": phone, # fill with your phone number
-#                     "CallBackURL": my_endpoint + "callback",
-#                     "AccountReference": "TestPay",
-#                     "TransactionDesc": "HelloTest",
-#                     "Amount": amount
-#                     }
-#             res = requests.post(endpoint, json=data, headers=headers)
-#             response = res.json()
-#             context = { "response":response }
-
-#     return render(request, 'user/stkresult.html', context)   
 
 @csrf_exempt
 def init_stk(request):
@@ -837,7 +801,16 @@ def init_stk(request):
                 "AccountReference": "TestPay",
                 "TransactionDesc": "HelloTest",
                 "Amount": amount
+
             }
+            
+            # Store payment information in the session
+            request.session['pending_payment'] = {
+                'amount': str(amount),
+                'phone': phone,
+                'user_id': request.user.id,
+            }
+
             res = requests.post(endpoint, json=data, headers=headers)
             response = res.json()
             context = {"response": response}
@@ -850,44 +823,14 @@ def init_stk(request):
 
 ###################### Callback ############################
 
-# class MpesaStkPushCallbackView(View):
-#     def post(self, request):
-#         data = json.loads(request.body)['Body']['stkCallback']
-        
-#         if data['ResultCode'] == 0:
-#             # if payment was successful
-#              try:
-#                 with atomic():
-#                     MpesaPayment.objects.create(
-#                         MerchantRequestID=data['MerchantRequestID'],
-#                         CheckoutRequestID=data['CheckoutRequestID'],
-#                         ResultCode=data['ResultCode'],
-#                         ResultDesc=data['ResultDesc'],
-#                         Amount=data['CallbackMetadata']['Item'][0]['Value'],
-#                         MpesaReceiptNumber=data['CallbackMetadata']['Item'][1]['Value'],
-#                         Balance=data['CallbackMetadata']['Item'][2]['Value'],
-#                         TransactionDate=data['CallbackMetadata']['Item'][3]['Value'],
-#                         PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
-#                     )
-#                     # order_id = request.session['order_id']
-#                     # order = get_object_or_404(Order, id=order_id)
-#                     # order.paid = True
-#                     # order.save()
-#                     return redirect(reverse('dashboard'))
-#              except IntegrityError:
-#                 return HttpResponse('Payment already exists')
-
-#         return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
-
 class MpesaStkPushCallbackView(View):
     def post(self, request):
         data = json.loads(request.body)['Body']['stkCallback']
         
         if data['ResultCode'] == 0:
-            # if payment was successful
             try:
-                with atomic():
-                    MpesaPayment.objects.create(
+                with transaction.atomic():
+                    payment = MpesaPayment.objects.create(
                         MerchantRequestID=data['MerchantRequestID'],
                         CheckoutRequestID=data['CheckoutRequestID'],
                         ResultCode=data['ResultCode'],
@@ -898,17 +841,18 @@ class MpesaStkPushCallbackView(View):
                         TransactionDate=data['CallbackMetadata']['Item'][3]['Value'],
                         PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
                     )
-
-                    # Clear the session flag
-                    if 'payment_initiated' in request.session:
-                        del request.session['payment_initiated']
                     
-                    return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
+                    # Mark the payment as successful in the session
+                    request.session['payment_successful'] = True
+                    
+                return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
             except IntegrityError:
                 return HttpResponse('Payment already exists')
-
-        return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
-
+        else:
+            # Mark the payment as failed in the session
+            request.session['payment_failed'] = True
+        
+        return JsonResponse({"ResultCode": 1, "ResultDesc": "Failed", "ThirdPartyTransID": 0})
 
 ########################### End Callback #################################
 
@@ -916,13 +860,49 @@ class MpesaStkPushCallbackView(View):
 ########################## check payment status ###################
 
 def check_payment_status(request):
-    if request.session.get('payment_initiated'):
-        return redirect('dashboard')  # Change 'dashboard' to your actual URL name
-
-    # If no payment initiated, handle accordingly
-    return redirect('init_stk')  # Change 'home' to your default page URL name
+    if request.session.get('payment_successful', False):
+        # Payment was successful
+        pending_payment = request.session.get('pending_payment', {})
+        user_id = pending_payment.get('user_id')
+        amount = pending_payment.get('amount')
+        
+        if user_id and amount:
+            user = get_user_model().objects.get(id=user_id)
+            user_account = UserAccount.objects.get(user=user)
+            user_account.amount_paid += Decimal(amount)
+            user_account.balance += Decimal(amount)
+            user_account.save()
+        
+        # Clear session data
+        del request.session['payment_successful']
+        del request.session['pending_payment']
+        
+        return JsonResponse({'status': 'success', 'message': 'Payment successful'})
+    
+    elif request.session.get('payment_failed', False):
+        # Payment failed or was cancelled
+        del request.session['payment_failed']
+        del request.session['pending_payment']
+        return JsonResponse({'status': 'failed', 'message': 'Payment failed or was cancelled'})
+    
+    # Payment still pending
+    return JsonResponse({'status': 'pending', 'message': 'Payment is still being processed'})
 
 ########################## end check payment status ##################
+
+########################## redirect ###########################
+
+def payment_redirect(request):
+    if request.session.get('payment_successful', False):
+        messages.success(request, 'Payment successful. Your balance has been updated.')
+        return redirect(reverse('dashboard'))
+    elif request.session.get('payment_failed', False):
+        messages.error(request, 'Payment failed or was cancelled.')
+    return redirect(reverse('initiate_payment'))  # or wherever you want to redirect
+
+########################## end redirect #######################
+
+
 # mpesa callback test
 @csrf_exempt
 def callback(request):
