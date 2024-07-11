@@ -31,6 +31,8 @@ from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdraw
 # import forms
 from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordForm, deposit_form, withdraw_form, searchForm, StkpushForm, transactions_id_form, letterForm, user_deposit_form
 
+from .utils import get_access_token
+
 ########## global variable #######
 base_url = 'https://codius.up.railway.app/'
 key = 'nAbuuqCD0dMH3uhXSO5A2yY7rd1HACYE'
@@ -739,26 +741,6 @@ def refresh_balance(request):
         total_amount += user.UserAccount.balance
     balance = total_amount
     return HttpResponse(balance)
-
-######################### ACCESS TOKEN ##################################
-def get_access_token():
-    consumer_key = key
-    consumer_secret = secret
-    endpoint = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
-
-    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
-    data = json.loads(r.text)
-# Check if the request was successful
-    if r.status_code == 200:
-        # Parse JSON content
-        data = json.loads(r.text)
-        # Access the token
-        access_token = data.get("access_token")
-        return access_token
-    else:
-        # Handle error response
-        return None
-########################## END ACCESS TOKEN #############################
 
 
 ######################### STK #################################
