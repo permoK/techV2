@@ -886,3 +886,980 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 /home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 810, in init_stk
+    print(response["MerchantRequestID"])
+KeyError: 'MerchantRequestID'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 810, in init_stk
+    print(response["MerchantRequestID"])
+KeyError: 'MerchantRequestID'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 810, in init_stk
+    print(response["MerchantRequestID"])
+KeyError: 'MerchantRequestID'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 828, in init_stk
+    description = response["errorMessage"],
+KeyError: 'errorMessage'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 749, in get_access_token
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 828, in init_stk
+    description = response["errorMessage"],
+KeyError: 'errorMessage'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 828, in init_stk
+    description = response["errorMessage"],
+KeyError: 'errorMessage'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 828, in init_stk
+    description = response["errorMessage"],
+KeyError: 'errorMessage'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 814, in init_stk
+    if response["ResponseCode"] == 0:
+KeyError: 'ResponseCode'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 810, in init_stk
+    print(response["MerchantRequestID"])
+KeyError: 'MerchantRequestID'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 814, in init_stk
+    if response["ResponseCode"] == 0:
+KeyError: 'ResponseCode'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 814, in init_stk
+    if response["ResponseCode"]:
+KeyError: 'ResponseCode'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 819, in init_stk
+    description = response["ResponseDescription"],
+KeyError: 'ResponseDescription'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 815, in init_stk
+    if response["ResponseCode"] == 0:
+KeyError: 'ResponseCode'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 815, in init_stk
+    if response["ResponseCode"] == 0:
+KeyError: 'ResponseCode'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 815, in init_stk
+    if response["ResultCode"] == 0:
+KeyError: 'ResultCode'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 815, in init_stk
+    if response["ResultCode"]:
+KeyError: 'ResultCode'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 816, in init_stk
+    if response["ResultCode"]:
+KeyError: 'ResultCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 827, in init_stk
+    if response["errorMessage"]:
+KeyError: 'errorMessage'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 816, in init_stk
+    if response["ResultCode"]:
+KeyError: 'ResultCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 826, in init_stk
+    except response["errorMessage"]:
+KeyError: 'errorMessage'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 816, in init_stk
+    if response["ResultCode"]:
+KeyError: 'ResultCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 826, in init_stk
+    except response["errorMessage"]:
+KeyError: 'errorMessage'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 816, in init_stk
+    if response["ResultCode"]:
+KeyError: 'ResultCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 826, in init_stk
+    except response == response["errorMessage"]:
+KeyError: 'errorMessage'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 816, in init_stk
+    if response["ResultCode"]:
+KeyError: 'ResultCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 827, in init_stk
+    print(response["errorMessage"])
+KeyError: 'errorMessage'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 815, in init_stk
+    if response["ResultCode"]:
+KeyError: 'ResultCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 826, in init_stk
+    print(response["errorMessage"])
+KeyError: 'errorMessage'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column "user_id" of relation "investor_mpesarequest" does not exist
+LINE 1: INSERT INTO "investor_mpesarequest" ("user_id", "amount", "p...
+                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 810, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column "user_id" of relation "investor_mpesarequest" does not exist
+LINE 1: INSERT INTO "investor_mpesarequest" ("user_id", "amount", "p...
+                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column "user_id" of relation "investor_mpesarequest" does not exist
+LINE 1: INSERT INTO "investor_mpesarequest" ("user_id", "amount", "p...
+                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 833, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column "user_id" of relation "investor_mpesarequest" does not exist
+LINE 1: INSERT INTO "investor_mpesarequest" ("user_id", "amount", "p...
+                                             ^
+
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 749, in get_access_token
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 749, in get_access_token
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 840, in init_stk
+    context = {"response": response}
+UnboundLocalError: local variable 'response' referenced before assignment
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 803, in init_stk
+    reponse = res.json()
+UnboundLocalError: local variable 'res' referenced before assignment
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /admin
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 750, in get_access_token
+    data = json.loads(r.text)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Not Found: /favicon.ico
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -5] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x779af4206f20>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x779af4206f20>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 749, in get_access_token
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x779af4206f20>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)"))
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -5] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x7a553d524a30>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7a553d524a30>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 749, in get_access_token
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7a553d524a30>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)"))
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 783, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 749, in get_access_token
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader

@@ -193,19 +193,18 @@ class Callback(models.Model):
     date = models.DateTimeField(default=timezone.now)
 
 
-############ inta ###############################
+############ Mpesa Request ###############################
 class MpesaRequest(models.Model):
-    user = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    phone_number = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
-    merchant = models.CharField(max_length=100, unique=True)
-    status = models.CharField(max_length=100, default='PENDING')
+    phone_number = models.CharField(max_length=15)
+    description = models.TextField()
+    merchant = models.CharField(max_length=100, null=True, blank=True)
+    status = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.user} - {self.status}"
+        return f"{self.user.username} - {self.amount} - {self.status}"
 
 
 ###################### STKpush callback ########################
