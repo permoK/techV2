@@ -95,10 +95,6 @@ urlpatterns = [
 
     path('callback', MpesaStkPushCallbackView.as_view(), name='mpesa-stk-push-callback'),
 
-
-    path('check-payment-status/', check_payment_status, name='check_payment_status'),
-    path('payment/redirect/', payment_redirect, name='payment_redirect'),
-
    ]
 
 if settings.DEBUG:

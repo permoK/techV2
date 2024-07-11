@@ -217,7 +217,7 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
-
+################### mpesa payments ############################
 class MpesaPayment(BaseModel):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
@@ -244,5 +244,6 @@ class MpesaPayment(BaseModel):
         
     def __str__(self):
         return self.first_name
+####################### End Payment ######################################
 
-#################################################################
+############################ End Payments model #####################################
