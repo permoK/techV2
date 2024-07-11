@@ -833,7 +833,7 @@ def init_stk(request):
 class MpesaStkPushCallbackView(View):
     def post(self, request):
         data = json.loads(request.body)['Body']['stkCallback']
-        print(data[ResultCode]) 
+        print(data["ResultCode"]) 
         if data['ResultCode'] == 0:
             try:
                 with transaction.atomic():
@@ -849,16 +849,12 @@ class MpesaStkPushCallbackView(View):
                         PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
                     )
                     
-                    # Mark the payment as successful in the session
-                    request.session['payment_successful'] = True
-                    
                 return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
             except IntegrityError:
                 return HttpResponse('Payment already exists')
         else:
             # Mark the payment as failed in the session
-            request.session['payment_failed'] = True
-        
+            print("not sent")
         return JsonResponse({"ResultCode": 1, "ResultDesc": "Failed", "ThirdPartyTransID": 0})
 
 ########################### End Callback #################################
