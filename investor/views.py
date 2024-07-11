@@ -829,33 +829,88 @@ def init_stk(request):
 ####################### END STK ###############################
 
 ###################### Callback ############################
+# @method_decorator(csrf_exempt, name='dispatch')
+# class MpesaStkPushCallbackView(View):
+#     def post(self, request):
+#         data = json.loads(request.body)['Body']['stkCallback']
+#         print(data["ResultCode"]) 
+
+#         if data['ResultCode'] == 0:
+#             try:
+#                 payment = MpesaPayment.objects.create(
+#                         MerchantRequestID=data['MerchantRequestID'],
+#                         CheckoutRequestID=data['CheckoutRequestID'],
+#                         ResultCode=data['ResultCode'],
+#                         ResultDesc=data['ResultDesc'],
+#                         Amount=data['CallbackMetadata']['Item'][0]['Value'],
+#                         MpesaReceiptNumber=data['CallbackMetadata']['Item'][1]['Value'],
+#                         Balance=data['CallbackMetadata']['Item'][2]['Value'],
+#                         TransactionDate=data['CallbackMetadata']['Item'][3]['Value'],
+#                         PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
+#                         )
+
+#                 return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
+#             except IntegrityError:
+#                 return HttpResponse('Payment already exists')
+#         else:
+#             # Mark the payment as failed in the session
+#             print(data['ResultDesc'])
+#         return JsonResponse({"ResultCode": 1, "ResultDesc": "Failed", "ThirdPartyTransID": 0})
 @method_decorator(csrf_exempt, name='dispatch')
 class MpesaStkPushCallbackView(View):
     def post(self, request):
         data = json.loads(request.body)['Body']['stkCallback']
-        print(data["ResultCode"]) 
+        
         if data['ResultCode'] == 0:
             try:
-                payment = MpesaPayment.objects.create(
-                        MerchantRequestID=data['MerchantRequestID'],
-                        CheckoutRequestID=data['CheckoutRequestID'],
-                        ResultCode=data['ResultCode'],
-                        ResultDesc=data['ResultDesc'],
-                        Amount=data['CallbackMetadata']['Item'][0]['Value'],
-                        MpesaReceiptNumber=data['CallbackMetadata']['Item'][1]['Value'],
-                        Balance=data['CallbackMetadata']['Item'][2]['Value'],
-                        TransactionDate=data['CallbackMetadata']['Item'][3]['Value'],
-                        PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
-                        )
+                callback_metadata = data['CallbackMetadata']['Item']
+                
+                # Extracting the necessary data from the callback metadata
+                amount = next(item['Value'] for item in callback_metadata if item['Name'] == 'Amount')
+                mpesa_receipt_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'MpesaReceiptNumber')
+                transaction_date = next(item['Value'] for item in callback_metadata if item['Name'] == 'TransactionDate')
+                phone_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'PhoneNumber')
+
+                # Creating the MpesaPayment entry
+                MpesaPayment.objects.create(
+                    amount=amount,
+                    description=data['ResultDesc'],
+                    type="CustomerPayBillOnline",  # Assuming type from the initial request
+                    reference=mpesa_receipt_number,
+                    first_name="",  # If available, extract from another part of the callback or request
+                    middle_name="",
+                    last_name="",
+                    phone_number=phone_number,
+                    organization_balance=0.00,  # Assuming no balance provided in the callback
+                    is_finished=True,
+                    is_successful=True,
+                    trans_id=mpesa_receipt_number,
+                    order_id="",  # If available, extract from another part of the callback or request
+                    checkout_request_id=data['CheckoutRequestID'],
+                )
 
                 return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
-            except IntegrityError:
-                return HttpResponse('Payment already exists')
+            except Exception as e:
+                return JsonResponse({"ResultCode": 1, "ResultDesc": f"Failed - {str(e)}", "ThirdPartyTransID": 0})
         else:
-            # Mark the payment as failed in the session
-            print(data['ResultDesc'])
-        return JsonResponse({"ResultCode": 1, "ResultDesc": "Failed", "ThirdPartyTransID": 0})
-
+            # Handle failed transaction
+            MpesaPayment.objects.create(
+                amount=0.00,
+                description=data['ResultDesc'],
+                type="CustomerPayBillOnline",
+                reference="",
+                first_name="",
+                middle_name="",
+                last_name="",
+                phone_number="",
+                organization_balance=0.00,
+                is_finished=True,
+                is_successful=False,
+                trans_id="",
+                order_id="",
+                checkout_request_id=data['CheckoutRequestID'],
+            )
+            return JsonResponse({"ResultCode": 1, "ResultDesc": data['ResultDesc'], "ThirdPartyTransID": 0})
 ########################### End Callback #################################
 
 
