@@ -157,17 +157,27 @@ WSGI_APPLICATION = 'tech_investement.wsgi.application'
 #####################end mysql####################
 
 ############### postgress ################
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'HmrcGSSYeHgGQjepqPXXKkChTXGjNgXM',
+#         'HOST': 'viaduct.proxy.rlwy.net',   # Or the hostname where your MySQL server is running
+#         'PORT': '38610',        # Default MySQL port
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'HmrcGSSYeHgGQjepqPXXKkChTXGjNgXM',
-        'HOST': 'viaduct.proxy.rlwy.net',   # Or the hostname where your MySQL server is running
-        'PORT': '38610',        # Default MySQL port
+        'NAME': 'postgres',
+        'USER': 'postgres.dffppwpeipszpibbxboa',
+        'PASSWORD': 'Pk@11241008075',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',   # Or the hostname where your MySQL server is running
+        'PORT': '6543',        # Default MySQL port
     }
 }
-
 #####################end postgress####################
 
 # Password validation
