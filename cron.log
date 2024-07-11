@@ -532,3 +532,339 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 /home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 810, in init_stk
+    user = request.get.user
+AttributeError: 'WSGIRequest' object has no attribute 'get'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "investor_mpesarequest" does not exist
+LINE 1: INSERT INTO "investor_mpesarequest" ("user", "amount", "phon...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 813, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "investor_mpesarequest" does not exist
+LINE 1: INSERT INTO "investor_mpesarequest" ("user", "amount", "phon...
+                    ^
+
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(20)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 813, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: value too long for type character varying(20)
+
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(20)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 813, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: value too long for type character varying(20)
+
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/admin.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Internal Server Error: /admin/investor/mpesarequest/
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: MpesaRequest has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 285, in lookup_field
+    value = attr()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py", line 208, in __str__
+    return f"{self.reference} - {self.amount}"
+AttributeError: 'MpesaRequest' object has no attribute 'reference'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader

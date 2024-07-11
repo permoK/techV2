@@ -25,7 +25,7 @@ import base64
 import uuid
 
 # import models
-from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase, Callback
+from .models import UserProfile, UserAccount, Transaction_ids, Deposit, Withdrawal, WithdrawalRequest, Item, Purchase, Callback, MpesaRequest
 
 # import forms
 from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordForm, deposit_form, withdraw_form, searchForm, StkpushForm, transactions_id_form, letterForm, user_deposit_form
@@ -761,6 +761,7 @@ def get_access_token():
 
 
 ######################### STK #################################
+@login_required
 @csrf_exempt
 def stkpush(request):
 
@@ -768,7 +769,7 @@ def stkpush(request):
 
     return render(request, 'user/deposit.html', {"form":form})
 
-
+@login_required
 @csrf_exempt
 def init_stk(request):
     if request.method == 'POST':
@@ -803,9 +804,22 @@ def init_stk(request):
 
             res = requests.post(endpoint, json=data, headers=headers)
             response = res.json()
-            context = {"response": response}
+            
             print(response)
             print(response["MerchantRequestID"])
+            user = request.user
+            print(user.id) 
+
+            MpesaRequest.objects.create(
+                    user = user,
+                    amount = amount,
+                    phone_number = phone,
+                    description = response["ResponseDescription"],
+                    merchant = response["MerchantRequestID"],
+                    status = response["CustomerMessage"],
+                    )
+
+            context = {"response": response}
 
             return render(request, 'user/stkresult.html', context)
 
@@ -818,7 +832,7 @@ def init_stk(request):
 class MpesaStkPushCallbackView(View):
     def post(self, request):
         data = json.loads(request.body)['Body']['stkCallback']
-        
+        print(data[ResultCode]) 
         if data['ResultCode'] == 0:
             try:
                 with transaction.atomic():
