@@ -34,6 +34,7 @@ from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordFor
 from .utils import get_access_token
 
 ########## global variable #######
+# base_url = 'https://codius.up.railway.app/'
 base_url = 'https://codius.up.railway.app/'
 key = 'nAbuuqCD0dMH3uhXSO5A2yY7rd1HACYE'
 secret = '3ZnvWnVqFqPgvUXF'
@@ -847,7 +848,7 @@ class MpesaStkPushCallbackView(View):
                 # check for macthing merchant and save the amount to the user with the matching merchant
                 
                 # saved merchant
-                user = MpesaRequest.objects.get(merchant=data['MerchantRequestID'])
+                user = MpesaRequest.objects.get(merchant=data["Body"]["stkCallback"]["MerchantRequestID"])
                 # update balance
                 user.amount += amount
                 # Creating the MpesaPayment entry
@@ -866,7 +867,7 @@ class MpesaStkPushCallbackView(View):
                     trans_id=mpesa_receipt_number,
                     order_id="",  # If available, extract from another part of the callback or request
                     checkout_request_id=data['CheckoutRequestID'],
-                    merchant = data['MerchantRequestID'], 
+                    merchant = data["Body"]["stkCallback"]["MerchantRequestID"]
                 )
 
                 return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
@@ -889,6 +890,7 @@ class MpesaStkPushCallbackView(View):
                 trans_id="",
                 order_id="",
                 checkout_request_id=data['CheckoutRequestID'],
+                merchant = "",
             )
             return JsonResponse({"ResultCode": 1, "ResultDesc": data['ResultDesc'], "ThirdPartyTransID": 0})
 ########################### End Callback #################################
