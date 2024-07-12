@@ -829,33 +829,6 @@ def init_stk(request):
 ####################### END STK ###############################
 
 ###################### Callback ############################
-# @method_decorator(csrf_exempt, name='dispatch')
-# class MpesaStkPushCallbackView(View):
-#     def post(self, request):
-#         data = json.loads(request.body)['Body']['stkCallback']
-#         print(data["ResultCode"]) 
-
-#         if data['ResultCode'] == 0:
-#             try:
-#                 payment = MpesaPayment.objects.create(
-#                         MerchantRequestID=data['MerchantRequestID'],
-#                         CheckoutRequestID=data['CheckoutRequestID'],
-#                         ResultCode=data['ResultCode'],
-#                         ResultDesc=data['ResultDesc'],
-#                         Amount=data['CallbackMetadata']['Item'][0]['Value'],
-#                         MpesaReceiptNumber=data['CallbackMetadata']['Item'][1]['Value'],
-#                         Balance=data['CallbackMetadata']['Item'][2]['Value'],
-#                         TransactionDate=data['CallbackMetadata']['Item'][3]['Value'],
-#                         PhoneNumber=data['CallbackMetadata']['Item'][4]['Value'],
-#                         )
-
-#                 return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
-#             except IntegrityError:
-#                 return HttpResponse('Payment already exists')
-#         else:
-#             # Mark the payment as failed in the session
-#             print(data['ResultDesc'])
-#         return JsonResponse({"ResultCode": 1, "ResultDesc": "Failed", "ThirdPartyTransID": 0})
 @method_decorator(csrf_exempt, name='dispatch')
 class MpesaStkPushCallbackView(View):
     def post(self, request):
@@ -871,6 +844,12 @@ class MpesaStkPushCallbackView(View):
                 transaction_date = next(item['Value'] for item in callback_metadata if item['Name'] == 'TransactionDate')
                 phone_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'PhoneNumber')
 
+                # check for macthing merchant and save the amount to the user with the matching merchant
+                
+                # saved merchant
+                user = MpesaRequest.objects.get(merchant=data['MerchantRequestID'])
+                # update balance
+                user.amount += amount
                 # Creating the MpesaPayment entry
                 MpesaPayment.objects.create(
                     amount=amount,
@@ -887,6 +866,7 @@ class MpesaStkPushCallbackView(View):
                     trans_id=mpesa_receipt_number,
                     order_id="",  # If available, extract from another part of the callback or request
                     checkout_request_id=data['CheckoutRequestID'],
+                    merchant = data['MerchantRequestID'], 
                 )
 
                 return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})

@@ -1938,3 +1938,109 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 /home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -5] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x7e9b979d97e0>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7e9b979d97e0>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 765, in init_stk
+    access_token = get_access_token()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/utils.py", line 33, in get_access_token
+    r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /oauth/v1/generate?grant_type=client_credentials (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7e9b979d97e0>: Failed to resolve 'sandbox.safaricom.co.ke' ([Errno -5] No address associated with hostname)"))
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
