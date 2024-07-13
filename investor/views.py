@@ -756,14 +756,33 @@ def stkpush(request):
 @login_required
 @csrf_exempt
 def init_stk(request):
+
     if request.method == 'POST':
         form = StkpushForm(request.POST)
         if form.is_valid():
             phone = form.cleaned_data['phone_number']
             amount = form.cleaned_data['amount']
+            
+            consumer_key = key
+            consumer_secret = secret
+            endpoint = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+
+            r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+            # data = json.loads(r.text)
+        # Check if the request was successful
+            if r.status_code == 200:
+                # Parse JSON content
+                data = json.loads(r.text)
+                # Access the token
+                access_token = data.get("access_token")
+
+            else:
+                # Handle error response
+                return None
+
 
             endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
-            access_token = get_access_token()
+            access_token = access_token
             headers = {"Authorization": f"Bearer {access_token}"}
             my_endpoint = base_url  # Replace with your actual base URL
             Timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
