@@ -835,6 +835,7 @@ class MpesaStkPushCallbackView(View):
     def post(self, request):
         data = json.loads(request.body)['Body']['stkCallback']
         
+        print(data)
         if data['ResultCode'] == 0:
             try:
                 callback_metadata = data['CallbackMetadata']['Item']
@@ -851,6 +852,7 @@ class MpesaStkPushCallbackView(View):
                 user = MpesaRequest.objects.get(merchant=data["Body"]["stkCallback"]["MerchantRequestID"])
                 # update balance
                 user.amount += amount
+
                 # Creating the MpesaPayment entry
                 MpesaPayment.objects.create(
                     amount=amount,
@@ -892,6 +894,7 @@ class MpesaStkPushCallbackView(View):
                 checkout_request_id=data['CheckoutRequestID'],
                 merchant = "",
             )
+            print('error')
             return JsonResponse({"ResultCode": 1, "ResultDesc": data['ResultDesc'], "ThirdPartyTransID": 0})
 ########################### End Callback #################################
 
