@@ -853,6 +853,9 @@ class MpesaStkPushCallbackView(View):
                 # update balance
                 user.amount += amount
 
+                user.save()
+                print(user.amount)
+
                 # Creating the MpesaPayment entry
                 MpesaPayment.objects.create(
                     amount=amount,
@@ -871,6 +874,8 @@ class MpesaStkPushCallbackView(View):
                     checkout_request_id=data['CheckoutRequestID'],
                     merchant = data["Body"]["stkCallback"]["MerchantRequestID"]
                 )
+                
+                print("saved successfully in the database")
 
                 return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
             except Exception as e:
