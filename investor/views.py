@@ -901,33 +901,32 @@ class MpesaStkPushCallbackView(View):
         print(data)
 
         if data['ResultCode'] == '0':
-            try:
-                print(data)
-                callback_metadata = data['CallbackMetadata']['Item']
-                
-                # Extracting the necessary data from the callback metadata
-                amount = next(item['Value'] for item in callback_metadata if item['Name'] == 'Amount')
-                print(amount)
-                mpesa_receipt_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'MpesaReceiptNumber')
-                print(mpesa_receipt_number)
-                transaction_date = next(item['Value'] for item in callback_metadata if item['Name'] == 'TransactionDate')
-                print(transaction_date)
-                phone_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'PhoneNumber')
-                print(phone_number)
+            print(data)
+            callback_metadata = data['CallbackMetadata']['Item']
 
-                # check for macthing merchant and save the amount to the user with the matching merchant
-                
-                # saved merchant
-                user = MpesaRequest.objects.get(merchant=data["Body"]["stkCallback"]["MerchantRequestID"])
-                # update balance
-                user.amount += amount
+            # Extracting the necessary data from the callback metadata
+            amount = next(item['Value'] for item in callback_metadata if item['Name'] == 'Amount')
+            print(amount)
+            mpesa_receipt_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'MpesaReceiptNumber')
+            print(mpesa_receipt_number)
+            transaction_date = next(item['Value'] for item in callback_metadata if item['Name'] == 'TransactionDate')
+            print(transaction_date)
+            phone_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'PhoneNumber')
+            print(phone_number)
 
-                # user.save()
-                # print(user.amount)
-                print(data)
+            # check for macthing merchant and save the amount to the user with the matching merchant
 
-                # Creating the MpesaPayment entry
-                MpesaPayment.objects.create(
+            # saved merchant
+            user = MpesaRequest.objects.get(merchant=data["Body"]["stkCallback"]["MerchantRequestID"])
+            # update balance
+            user.amount += amount
+
+            # user.save()
+            # print(user.amount)
+            print(data)
+
+            # Creating the MpesaPayment entry
+            MpesaPayment.objects.create(
                     amount=amount,
                     description=data['ResultDesc'],
                     type="CustomerPayBillOnline",  # Assuming type from the initial request
@@ -943,34 +942,30 @@ class MpesaStkPushCallbackView(View):
                     order_id="",  # If available, extract from another part of the callback or request
                     checkout_request_id=data['CheckoutRequestID'],
                     merchant = data["Body"]["stkCallback"]["MerchantRequestID"]
-                )
-                
-                print("saved successfully in the database")
+                    )
 
-                return JsonResponse({"ResultCode": 0, "ResultDesc": "Success", "ThirdPartyTransID": 0})
-            except Exception as e:
-                return JsonResponse({"ResultCode": 1, "ResultDesc": f"Failed - {str(e)}", "ThirdPartyTransID": 0})
+            print("saved successfully in the database")
+
         else:
             # Handle failed transaction
             MpesaPayment.objects.create(
-                amount=0.00,
-                description=data['ResultDesc'],
-                type="CustomerPayBillOnline",
-                reference="",
-                first_name="",
-                middle_name="",
-                last_name="",
-                phone_number="",
-                organization_balance=0.00,
-                is_finished=True,
-                is_successful=False,
-                trans_id="",
-                order_id="",
-                checkout_request_id=data['CheckoutRequestID'],
-                merchant = "",
-            )
+                    amount=0.00,
+                    description=data['ResultDesc'],
+                    type="CustomerPayBillOnline",
+                    reference="",
+                    first_name="",
+                    middle_name="",
+                    last_name="",
+                    phone_number="",
+                    organization_balance=0.00,
+                    is_finished=True,
+                    is_successful=False,
+                    trans_id="",
+                    order_id="",
+                    checkout_request_id=data['CheckoutRequestID'],
+                    merchant = "",
+                    )
             print('error')
-            return JsonResponse({"ResultCode": 1, "ResultDesc": data['ResultDesc'], "ThirdPartyTransID": 0})
 ########################### End Callback #################################
 
 
