@@ -33,9 +33,11 @@ from .forms import CreateUserForm, UserProfileForm, loginForm, reset_passwordFor
 
 from .utils import get_access_token
 
+from django_daraja.mpesa.core import MpesaClient
+
 ########## global variable #######
 # base_url = 'https://codius.up.railway.app/'
-base_url = 'https://codius.up.railway.app/'
+base_url = 'https://cde2-104-28-243-149.ngrok-free.app'
 key = 'nAbuuqCD0dMH3uhXSO5A2yY7rd1HACYE'
 secret = '3ZnvWnVqFqPgvUXF'
 ####################################
@@ -753,7 +755,7 @@ def stkpush(request):
 
     return render(request, 'user/deposit.html', {"form":form})
 
-@login_required
+
 @csrf_exempt
 def init_stk(request):
 
@@ -763,60 +765,29 @@ def init_stk(request):
             phone = form.cleaned_data['phone_number']
             amount = form.cleaned_data['amount']
             
-            consumer_key = key
-            consumer_secret = secret
-            endpoint = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
-
-            r = requests.get(endpoint, auth=HTTPBasicAuth(consumer_key, consumer_secret))
-            # data = json.loads(r.text)
-        # Check if the request was successful
-            if r.status_code == 200:
-                # Parse JSON content
-                data = json.loads(r.text)
-                # Access the token
-                access_token = data.get("access_token")
-
-            else:
-                # Handle error response
-                return None
-
-
-            endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
-            access_token = access_token
-            headers = {"Authorization": f"Bearer {access_token}"}
-            my_endpoint = base_url  # Replace with your actual base URL
-            Timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-            password = "174379" + "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919" + Timestamp
-            datapass = base64.b64encode(password.encode('utf-8')).decode('utf-8')  # Decode to string
-
-            data = {
-                    "BusinessShortCode": "174379",
-                    "Password": datapass,
-                    "Timestamp": Timestamp,
-                    "TransactionType": "CustomerPayBillOnline",
-                    "PartyA": phone,
-                    "PartyB": "174379",
-                    "PhoneNumber": phone,
-                    "CallBackURL": my_endpoint + "callback",
-                    "AccountReference": "TestPay",
-                    "TransactionDesc": "HelloTest",
-                    "Amount": amount
-                    }
-
-            res = requests.post(endpoint, json=data, headers=headers)
-            response = res.json()
-            context = { "response":response }
+            cl = MpesaClient()
+            print(cl.access_token())
+            # Use a Safaricom phone number that you have access to, for you to be able to view the prompt.
+            phone_number = str(phone)
+            amount = amount
+            account_reference = 'reference'
+            transaction_desc = 'Description'
+            callback_url = 'https://codius.up.railway.app/callback'
+            response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+            response = response.json()
+            # print(response["ResponseCode"], response["MerchantRequestID"])
+            context = {"response":response}
 
             try:
-                if res.status_code == 200 and response.get("ResponseCode") == "0":
+                if response["ResponseCode"] == '0':
                     # Successful request
                     MpesaRequest.objects.create(
                             user=request.user,
                             amount=amount,
                             phone_number=phone,
-                            description=response.get("ResponseDescription", ""),
-                            merchant=response.get("MerchantRequestID", ""),
-                            status=response.get("CustomerMessage", ""),
+                            description=response["ResponseDescription"],
+                            merchant=response["MerchantRequestID"],
+                            status=response["CustomerMessage"],
                             )
                     # return JsonResponse({'status': 'success', 'message': response.get("CustomerMessage", "")}, status=200)
                     print("success")
@@ -826,7 +797,7 @@ def init_stk(request):
                             user=request.user,
                             amount=amount,
                             phone_number=phone,
-                            description=response.get("errorMessage", "Error processing request"),
+                            description=response["errorMessage"],
                             status="Failed",
                             )
                     # return JsonResponse({'status': 'failed', 'message': response.get("errorMessage", "Error processing request")}, status=400)
@@ -837,14 +808,86 @@ def init_stk(request):
                         user=request.user,
                         amount=amount,
                         phone_number=phone,
-                        description=str(e),
-                        status="Exception",
+                        description=response["errorMessage"],
+                        status="caught Exception",
                         )
-            context = {"response": response}
+        
+        return render(request, 'user/stkresult.html', context)
 
-            return render(request, 'user/stkresult.html', context)
+# @login_required
+# @csrf_exempt
+# def init_stk(request):
 
-    return render(request, 'user/stkresult.html', context)
+#     if request.method == 'POST':
+#         form = StkpushForm(request.POST)
+#         if form.is_valid():
+#             phone = form.cleaned_data['phone_number']
+#             amount = form.cleaned_data['amount']
+            
+#             endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
+#             access_token = get_access_token()
+#             headers = {"Authorization": f"Bearer {access_token}"}
+#             my_endpoint = base_url  # Replace with your actual base URL
+#             Timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+#             password = "174379" + "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919" + Timestamp
+#             datapass = base64.b64encode(password.encode('utf-8')).decode('utf-8')  # Decode to string
+
+#             data = {
+#                     "BusinessShortCode": "174379",
+#                     "Password": datapass,
+#                     "Timestamp": Timestamp,
+#                     "TransactionType": "CustomerPayBillOnline",
+#                     "PartyA": phone,
+#                     "PartyB": "174379",
+#                     "PhoneNumber": phone,
+#                     "CallBackURL": my_endpoint + "callback",
+#                     "AccountReference": "TestPay",
+#                     "TransactionDesc": "HelloTest",
+#                     "Amount": amount
+#                     }
+
+#             res = requests.post(endpoint, json=data, headers=headers)
+#             response = res.json()
+#             context = { "response":response }
+
+#             try:
+#                 if res.status_code == 200 and response.get("ResponseCode") == "0":
+#                     # Successful request
+#                     MpesaRequest.objects.create(
+#                             user=request.user,
+#                             amount=amount,
+#                             phone_number=phone,
+#                             description=response.get("ResponseDescription", ""),
+#                             merchant=response.get("MerchantRequestID", ""),
+#                             status=response.get("CustomerMessage", ""),
+#                             )
+#                     # return JsonResponse({'status': 'success', 'message': response.get("CustomerMessage", "")}, status=200)
+#                     print("success")
+#                 else:
+#                     # Failed request
+#                     MpesaRequest.objects.create(
+#                             user=request.user,
+#                             amount=amount,
+#                             phone_number=phone,
+#                             description=response.get("errorMessage", "Error processing request"),
+#                             status="Failed",
+#                             )
+#                     # return JsonResponse({'status': 'failed', 'message': response.get("errorMessage", "Error processing request")}, status=400)
+#                     print("error")
+#             except Exception as e:
+#                 # Log the exception and save to database
+#                 MpesaRequest.objects.create(
+#                         user=request.user,
+#                         amount=amount,
+#                         phone_number=phone,
+#                         description=str(e),
+#                         status="Exception",
+#                         )
+#             context = {"response": response}
+
+#             return render(request, 'user/stkresult.html', context)
+
+#     return render(request, 'user/stkresult.html', context)
 
 ####################### END STK ###############################
 
@@ -854,16 +897,23 @@ class MpesaStkPushCallbackView(View):
     def post(self, request):
         data = json.loads(request.body)['Body']['stkCallback']
         
+        print(data['ResultCode'])
         print(data)
-        if data['ResultCode'] == 0:
+
+        if data['ResultCode'] == '0':
             try:
+                print(data)
                 callback_metadata = data['CallbackMetadata']['Item']
                 
                 # Extracting the necessary data from the callback metadata
                 amount = next(item['Value'] for item in callback_metadata if item['Name'] == 'Amount')
+                print(amount)
                 mpesa_receipt_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'MpesaReceiptNumber')
+                print(mpesa_receipt_number)
                 transaction_date = next(item['Value'] for item in callback_metadata if item['Name'] == 'TransactionDate')
+                print(transaction_date)
                 phone_number = next(item['Value'] for item in callback_metadata if item['Name'] == 'PhoneNumber')
+                print(phone_number)
 
                 # check for macthing merchant and save the amount to the user with the matching merchant
                 
@@ -872,8 +922,9 @@ class MpesaStkPushCallbackView(View):
                 # update balance
                 user.amount += amount
 
-                user.save()
-                print(user.amount)
+                # user.save()
+                # print(user.amount)
+                print(data)
 
                 # Creating the MpesaPayment entry
                 MpesaPayment.objects.create(

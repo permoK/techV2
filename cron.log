@@ -2118,3 +2118,915 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 /home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 139, in dashboard
+    bonus = "{:,.2f}".format(UserAccount.objects.get(username=request.user).bonus)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+investor.models.UserAccount.DoesNotExist: UserAccount matching query does not exist.
+Not Found: /favicon.ico
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+/home/peekay/Documents/projects/django/deploy/techV2/investor/utils.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Internal Server Error: /callback
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 837, in post
+    data = json.loads(request.body)['Body']['stkCallback']
+KeyError: 'Body'
+Internal Server Error: /callback
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 837, in post
+    data = json.loads(request.body)['Body']['stkCallback']
+KeyError: 'Body'
+Internal Server Error: /callback
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 837, in post
+    data = json.loads(request.body)['Body']['stkCallback']
+KeyError: 'Body'
+Internal Server Error: /callback
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 837, in post
+    data = json.loads(request.body)['Body']['stkCallback']
+KeyError: 'stkCallback'
+Internal Server Error: /callback
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 837, in post
+    data = json.loads(request.body)['Body']['stkCallback']
+KeyError: 'Body'
+Internal Server Error: /callback
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 837, in post
+    data = json.loads(request.body)['Body']['stkCallback']
+KeyError: 'Body'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x721a35461120>, 'Connection to sandbox.safaricom.co.ke timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /mpesa/stkpush/v1/processrequest (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x721a35461120>, 'Connection to sandbox.safaricom.co.ke timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 788, in init_stk
+    res = requests.post(endpoint, json=data, headers=headers)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/requests/adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='sandbox.safaricom.co.ke', port=443): Max retries exceeded with url: /mpesa/stkpush/v1/processrequest (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x721a35461120>, 'Connection to sandbox.safaricom.co.ke timed out. (connect timeout=None)'))
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF cookie not set.): /callback
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF cookie not set.): /callback
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF cookie not set.): /callback
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF cookie not set.): /callback
+Forbidden (CSRF cookie not set.): /callback/
+Forbidden (CSRF cookie not set.): /
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Forbidden (CSRF cookie not set.): /callback
+Method Not Allowed (GET): /callback
+Method Not Allowed: /callback
+Forbidden (CSRF cookie not set.): /callback
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /callback
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 837, in post
+    data = json.loads(request.body)['Body']['stkCallback']
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Watching for file changes with StatReloader
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/tech_investement/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NumericValueOutOfRange: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 807, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NumericValueOutOfRange: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 818, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NumericValueOutOfRange: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 795, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NumericValueOutOfRange: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 818, in init_stk
+    MpesaRequest.objects.create(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: numeric field overflow
+DETAIL:  A field with precision 10, scale 2 must round to an absolute value less than 10^8.
+
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /favicon.ico
+Not Found: /dashboard
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Connection to Redis lost: Retry (0/20) now.
+Connection to Redis lost: Retry (1/20) in 1.00 second.
+Connection to Redis lost: Retry (2/20) in 1.00 second.
+Connection to Redis lost: Retry (3/20) in 1.00 second.
+Connection to Redis lost: Retry (4/20) in 1.00 second.
+Connection to Redis lost: Retry (5/20) in 1.00 second.
+Connection to Redis lost: Retry (6/20) in 1.00 second.
+Connection to Redis lost: Retry (7/20) in 1.00 second.
+Connection to Redis lost: Retry (8/20) in 1.00 second.
+Connection to Redis lost: Retry (9/20) in 1.00 second.
+Connection to Redis lost: Retry (10/20) in 1.00 second.
+Connection to Redis lost: Retry (11/20) in 1.00 second.
+Connection to Redis lost: Retry (12/20) in 1.00 second.
+Connection to Redis lost: Retry (13/20) in 1.00 second.
+Connection to Redis lost: Retry (14/20) in 1.00 second.
+Connection to Redis lost: Retry (15/20) in 1.00 second.
+Connection to Redis lost: Retry (16/20) in 1.00 second.
+Connection to Redis lost: Retry (17/20) in 1.00 second.
+Connection to Redis lost: Retry (18/20) in 1.00 second.
+Connection to Redis lost: Retry (19/20) in 1.00 second.
+
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+Connection to Redis lost: Retry (0/20) now.
+Connection to Redis lost: Retry (1/20) in 1.00 second.
+Connection to Redis lost: Retry (2/20) in 1.00 second.
+Connection to Redis lost: Retry (3/20) in 1.00 second.
+Connection to Redis lost: Retry (4/20) in 1.00 second.
+Connection to Redis lost: Retry (5/20) in 1.00 second.
+Connection to Redis lost: Retry (6/20) in 1.00 second.
+Connection to Redis lost: Retry (7/20) in 1.00 second.
+Connection to Redis lost: Retry (8/20) in 1.00 second.
+Connection to Redis lost: Retry (9/20) in 1.00 second.
+Connection to Redis lost: Retry (10/20) in 1.00 second.
+Connection to Redis lost: Retry (11/20) in 1.00 second.
+Connection to Redis lost: Retry (12/20) in 1.00 second.
+Connection to Redis lost: Retry (13/20) in 1.00 second.
+Connection to Redis lost: Retry (14/20) in 1.00 second.
+Connection to Redis lost: Retry (15/20) in 1.00 second.
+Connection to Redis lost: Retry (16/20) in 1.00 second.
+Connection to Redis lost: Retry (17/20) in 1.00 second.
+Connection to Redis lost: Retry (18/20) in 1.00 second.
+Connection to Redis lost: Retry (19/20) in 1.00 second.
+
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /favicon.ico
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 777, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 777, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 777, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 779, in init_stk
+    print(response.json()["ResponseCode"], response[0])
+TypeError: 'MpesaResponse' object is not subscriptable
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /auth/login/
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /admin
+Not Found: /dashboard/images/demo/pic2.jpg
+Not Found: /dashboard/images/demo/pic1.jpg
+Not Found: /dashboard/images/demo/pic3.jpg
+Not Found: /dashboard/images/demo/pic4.jpg
+Not Found: /dashboard/images/demo/pic6.jpg
+Not Found: /dashboard/images/demo/pic7.jpg
+Not Found: /dashboard/images/demo/pic5.jpg
+Not Found: /dashboard/images/demo/pic8.jpg
+Not Found: /favicon.ico
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 805, in init_stk
+    return render(request, 'user/stkresult.html', context)
+NameError: name 'context' is not defined
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 778, in init_stk
+    print(response["ResponseCode"], response["MerchantRequestID"])
+KeyError: 'ResponseCode'
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 778, in init_stk
+    print(response["ResponseCode"], response["MerchantRequestID"])
+KeyError: 'ResponseCode'
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 776, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 776, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 776, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 776, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+Internal Server Error: /stkpush
+Traceback (most recent call last):
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py", line 776, in init_stk
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/core.py", line 84, in stk_push
+    phone_number = format_phone_number(phone_number)
+  File "/home/peekay/Documents/projects/django/deploy/techV2/techv2-venv/lib/python3.10/site-packages/django_daraja/mpesa/utils.py", line 188, in format_phone_number
+    if len(phone_number) < 9:
+TypeError: object of type 'int' has no len()
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/peekay/Documents/projects/django/deploy/techV2/investor/views.py changed, reloading.
+Watching for file changes with StatReloader

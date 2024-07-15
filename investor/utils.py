@@ -19,7 +19,7 @@ def generate_uuid():
     return code
 
 ########## global variable #######
-base_url = 'https://codius.up.railway.app/'
+base_url = 'https://3427-104-28-211-149.ngrok-free.app/'
 key = 'nAbuuqCD0dMH3uhXSO5A2yY7rd1HACYE'
 secret = '3ZnvWnVqFqPgvUXF'
 ####################################
