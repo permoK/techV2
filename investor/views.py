@@ -35,6 +35,8 @@ from .utils import get_access_token
 
 from django_daraja.mpesa.core import MpesaClient
 
+import logging
+
 ########## global variable #######
 # base_url = 'https://codius.up.railway.app/'
 base_url = 'https://cde2-104-28-243-149.ngrok-free.app'
@@ -755,10 +757,11 @@ def stkpush(request):
 
     return render(request, 'user/deposit.html', {"form":form})
 
+logger = logging.getLogger('django_daraja')
 
 @csrf_exempt
 def init_stk(request):
-
+    context = {}
     if request.method == 'POST':
         form = StkpushForm(request.POST)
         if form.is_valid():
@@ -766,53 +769,107 @@ def init_stk(request):
             amount = form.cleaned_data['amount']
             
             cl = MpesaClient()
-            print(cl.access_token())
-            # Use a Safaricom phone number that you have access to, for you to be able to view the prompt.
+            logger.debug(f"Access Token: {cl.access_token()}")
             phone_number = str(phone)
-            amount = amount
             account_reference = 'reference'
             transaction_desc = 'Description'
             callback_url = 'https://codius.up.railway.app/callback'
-            response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
-            response = response.json()
-            # print(response["ResponseCode"], response["MerchantRequestID"])
-            context = {"response":response}
-
+            
             try:
-                if response["ResponseCode"] == '0':
-                    # Successful request
+                response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+                response_data = response.json()
+                logger.debug(f"Response Data: {response_data}")
+                
+                if response_data.get("ResponseCode") == '0':
                     MpesaRequest.objects.create(
-                            user=request.user,
-                            amount=amount,
-                            phone_number=phone,
-                            description=response["ResponseDescription"],
-                            merchant=response["MerchantRequestID"],
-                            status=response["CustomerMessage"],
-                            )
-                    # return JsonResponse({'status': 'success', 'message': response.get("CustomerMessage", "")}, status=200)
-                    print("success")
-                else:
-                    # Failed request
-                    MpesaRequest.objects.create(
-                            user=request.user,
-                            amount=amount,
-                            phone_number=phone,
-                            description=response["errorMessage"],
-                            status="Failed",
-                            )
-                    # return JsonResponse({'status': 'failed', 'message': response.get("errorMessage", "Error processing request")}, status=400)
-                    print("error")
-            except Exception as e:
-                # Log the exception and save to database
-                MpesaRequest.objects.create(
                         user=request.user,
                         amount=amount,
                         phone_number=phone,
-                        description=response["errorMessage"],
-                        status="caught Exception",
-                        )
+                        description=response_data["ResponseDescription"],
+                        merchant=response_data["MerchantRequestID"],
+                        status=response_data["CustomerMessage"],
+                    )
+                    context = {"response": response_data}
+                else:
+                    MpesaRequest.objects.create(
+                        user=request.user,
+                        amount=amount,
+                        phone_number=phone,
+                        description=response_data.get("errorMessage", "Unknown error"),
+                        status="Failed",
+                    )
+                    context = {"response": response_data}
+            except requests.exceptions.RequestException as e:
+                logger.error(f"Request Exception: {e}")
+                context = {"error": str(e)}
+            except ValueError as e:
+                logger.error(f"Value Error: {e}")
+                context = {"error": str(e)}
+            except Exception as e:
+                logger.error(f"Unexpected Error: {e}")
+                context = {"error": str(e)}
         
         return render(request, 'user/stkresult.html', context)
+
+    return render(request, 'user/stkresult.html', context)
+
+# @csrf_exempt
+# def init_stk(request):
+
+#     if request.method == 'POST':
+#         form = StkpushForm(request.POST)
+#         if form.is_valid():
+#             phone = form.cleaned_data['phone_number']
+#             amount = form.cleaned_data['amount']
+            
+#             cl = MpesaClient()
+#             print(cl.access_token())
+#             # Use a Safaricom phone number that you have access to, for you to be able to view the prompt.
+#             phone_number = str(phone)
+#             amount = amount
+#             account_reference = 'reference'
+#             transaction_desc = 'Description'
+#             callback_url = 'https://codius.up.railway.app/callback'
+#             response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+#             response = response.json()
+#             # print(response["ResponseCode"], response["MerchantRequestID"])
+#             context = {"response":response}
+
+#             try:
+#                 if response["ResponseCode"] == '0':
+#                     # Successful request
+#                     MpesaRequest.objects.create(
+#                             user=request.user,
+#                             amount=amount,
+#                             phone_number=phone,
+#                             description=response["ResponseDescription"],
+#                             merchant=response["MerchantRequestID"],
+#                             status=response["CustomerMessage"],
+#                             )
+#                     # return JsonResponse({'status': 'success', 'message': response.get("CustomerMessage", "")}, status=200)
+#                     print("success")
+#                 else:
+#                     # Failed request
+#                     MpesaRequest.objects.create(
+#                             user=request.user,
+#                             amount=amount,
+#                             phone_number=phone,
+#                             description=response["errorMessage"],
+#                             status="Failed",
+#                             )
+#                     # return JsonResponse({'status': 'failed', 'message': response.get("errorMessage", "Error processing request")}, status=400)
+#                     print("error")
+#             except Exception as e:
+#                 # Log the exception and save to database
+#                 MpesaRequest.objects.create(
+#                         user=request.user,
+#                         amount=amount,
+#                         phone_number=phone,
+#                         description=response["errorMessage"],
+#                         status="caught Exception",
+#                         )
+        
+#         return render(request, 'user/stkresult.html', context)
 
 # @login_required
 # @csrf_exempt
