@@ -23,6 +23,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 import base64
 
+from decimal import Decimal
+
 import uuid
 
 # import models
@@ -761,7 +763,6 @@ logger = logging.getLogger('django_daraja')
 
 @csrf_exempt
 def init_stk(request):
-    context = {}
     if request.method == 'POST':
         form = StkpushForm(request.POST)
         if form.is_valid():
@@ -773,8 +774,8 @@ def init_stk(request):
             phone_number = str(phone)
             account_reference = 'reference'
             transaction_desc = 'Description'
-            # callback_url = 'https://codius.up.railway.app/callback'
-            callback_url = 'https://permo.pythonanywhere.com/callback'
+            callback_url = 'https://codius.up.railway.app/callback'
+            # callback_url = 'https://permo.pythonanywhere.com/callback'
             
             try:
                 response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
@@ -962,15 +963,15 @@ class MpesaStkPushCallbackView(View):
         result_desc = stk_callback.get('ResultDesc', '')
         callback_metadata = stk_callback.get('CallbackMetadata', {})
         items = callback_metadata.get('Item', [])
-        data = json.loads(request.body)['Body']['stkCallback']
+        # data = json.loads(request.body)['Body']['stkCallback']
         
-        print(data['ResultCode'])
+        # print(data['ResultCode'])
+        print(result_code)
         print(data)
 
-        if data['ResultCode'] == 0:
+        if result_code == 0:
             print(data)
-            callback_metadata = data['CallbackMetadata']['Item']
-
+            callback_metadata = items
             # Extracting the necessary data from the callback metadata
             amount = next(item['Value'] for item in callback_metadata if item['Name'] == 'Amount')
             print(amount)
@@ -984,13 +985,16 @@ class MpesaStkPushCallbackView(View):
             # check for macthing merchant and save the amount to the user with the matching merchant
 
             # saved merchant
-            # user = MpesaRequest.objects.get(merchant=data["Body"]["stkCallback"]["MerchantRequestID"])
-            # # update balance
-            # user.amount += amount
-
+            user = MpesaRequest.objects.get(merchant=merchant_request_id).user
+            print(user)
+            # get the account associated with the user
+            account = UserAccount.objects.get(username=user)
+            account.balance += Decimal(amount)
+            account.save()
+            # user.amount += Decimal(amount)
             # user.save()
             # print(user.amount)
-            print(data)
+            # print(data)
 
             d = json.loads(request.body.decode('utf-8'))
             body = d.get('Body', {})
@@ -999,7 +1003,7 @@ class MpesaStkPushCallbackView(View):
             # Creating the MpesaPayment entry
             MpesaPayment.objects.create(
                     amount=amount,
-                    description=data['ResultDesc'],
+                    description= result_desc,
                     type="CustomerPayBillOnline",  # Assuming type from the initial request
                     reference=mpesa_receipt_number,
                     first_name="",  # If available, extract from another part of the callback or request
@@ -1011,7 +1015,7 @@ class MpesaStkPushCallbackView(View):
                     is_successful=True,
                     trans_id=mpesa_receipt_number,
                     order_id="",  # If available, extract from another part of the callback or request
-                    checkout_request_id=data['CheckoutRequestID'],
+                    checkout_request_id= checkout_request_id,
                     # merchant = data["Body"]["stkCallback"]["MerchantRequestID"]
                     merchant = stk_callback.get('MerchantRequestID', '')
                     )
@@ -1022,7 +1026,7 @@ class MpesaStkPushCallbackView(View):
             # Handle failed transaction
             MpesaPayment.objects.create(
                     amount=0.00,
-                    description=data['ResultDesc'],
+                    description= result_desc,
                     type="CustomerPayBillOnline",
                     reference="",
                     first_name="",
@@ -1034,7 +1038,7 @@ class MpesaStkPushCallbackView(View):
                     is_successful=False,
                     trans_id="",
                     order_id="",
-                    checkout_request_id=data['CheckoutRequestID'],
+                    checkout_request_id= checkout_request_id,
                     merchant = "",
                     )
             print('error')
