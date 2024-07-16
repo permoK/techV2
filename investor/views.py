@@ -773,7 +773,8 @@ def init_stk(request):
             phone_number = str(phone)
             account_reference = 'reference'
             transaction_desc = 'Description'
-            callback_url = 'https://codius.up.railway.app/callback'
+            # callback_url = 'https://codius.up.railway.app/callback'
+            callback_url = 'https://permo.pythonanywhere.com/callback'
             
             try:
                 response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
@@ -952,12 +953,21 @@ def init_stk(request):
 @method_decorator(csrf_exempt, name='dispatch')
 class MpesaStkPushCallbackView(View):
     def post(self, request):
+        data = json.loads(request.body.decode('utf-8'))
+        body = data.get('Body', {})
+        stk_callback = body.get('stkCallback', {})
+        merchant_request_id = stk_callback.get('MerchantRequestID', '')
+        checkout_request_id = stk_callback.get('CheckoutRequestID', '')
+        result_code = stk_callback.get('ResultCode', '')
+        result_desc = stk_callback.get('ResultDesc', '')
+        callback_metadata = stk_callback.get('CallbackMetadata', {})
+        items = callback_metadata.get('Item', [])
         data = json.loads(request.body)['Body']['stkCallback']
         
         print(data['ResultCode'])
         print(data)
 
-        if data['ResultCode'] == '0':
+        if data['ResultCode'] == 0:
             print(data)
             callback_metadata = data['CallbackMetadata']['Item']
 
@@ -974,13 +984,17 @@ class MpesaStkPushCallbackView(View):
             # check for macthing merchant and save the amount to the user with the matching merchant
 
             # saved merchant
-            user = MpesaRequest.objects.get(merchant=data["Body"]["stkCallback"]["MerchantRequestID"])
-            # update balance
-            user.amount += amount
+            # user = MpesaRequest.objects.get(merchant=data["Body"]["stkCallback"]["MerchantRequestID"])
+            # # update balance
+            # user.amount += amount
 
             # user.save()
             # print(user.amount)
             print(data)
+
+            d = json.loads(request.body.decode('utf-8'))
+            body = d.get('Body', {})
+            stk_callback = body.get('stkCallback', {})
 
             # Creating the MpesaPayment entry
             MpesaPayment.objects.create(
@@ -998,7 +1012,8 @@ class MpesaStkPushCallbackView(View):
                     trans_id=mpesa_receipt_number,
                     order_id="",  # If available, extract from another part of the callback or request
                     checkout_request_id=data['CheckoutRequestID'],
-                    merchant = data["Body"]["stkCallback"]["MerchantRequestID"]
+                    # merchant = data["Body"]["stkCallback"]["MerchantRequestID"]
+                    merchant = stk_callback.get('MerchantRequestID', '')
                     )
 
             print("saved successfully in the database")
@@ -1023,6 +1038,7 @@ class MpesaStkPushCallbackView(View):
                     merchant = "",
                     )
             print('error')
+        return HttpResponse(data)
 ########################### End Callback #################################
 
 
