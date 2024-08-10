@@ -41,7 +41,7 @@ import logging
 
 ########## global variable #######
 # base_url = 'https://codius.up.railway.app/'
-base_url = 'https://monadoll.tech/'
+base_url = 'https://monadoll.tech'
 key = 'nAbuuqCD0dMH3uhXSO5A2yY7rd1HACYE'
 secret = '3ZnvWnVqFqPgvUXF'
 ####################################
