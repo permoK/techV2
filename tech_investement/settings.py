@@ -245,10 +245,6 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = ''
 
-# jobs
-CRON_CLASSES = [
-    'investor.cron.DailyProfitReleaseCronJob',
-]
 
 LOGGING = {
     'version': 1,
@@ -286,15 +282,6 @@ LOGGING = {
     },
 }
 
-# settings.py
-# CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_BROKER_URL = 'redis://default:iXUtcwKbqPzyJSJhfSZMpdRYzOayMvNy@monorail.proxy.rlwy.net:24537'
-# CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://default:iXUtcwKbqPzyJSJhfSZMpdRYzOayMvNy@monorail.proxy.rlwy.net:24537'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
 
 ###################################### mpesa ########################################################################
 # The Mpesa environment to use

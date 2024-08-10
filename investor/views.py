@@ -1045,9 +1045,3 @@ class MpesaStkPushCallbackView(View):
         return HttpResponse(data)
 ########################### End Callback #################################
 
-
-from .tasks import generate_profit
-
-# Start the task initially
-generate_profit.delay()
-
