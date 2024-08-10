@@ -41,7 +41,7 @@ import logging
 
 ########## global variable #######
 # base_url = 'https://codius.up.railway.app/'
-base_url = 'https://cde2-104-28-243-149.ngrok-free.app'
+base_url = 'https://monadoll.tech/'
 key = 'nAbuuqCD0dMH3uhXSO5A2yY7rd1HACYE'
 secret = '3ZnvWnVqFqPgvUXF'
 ####################################
@@ -774,7 +774,7 @@ def init_stk(request):
             phone_number = str(phone)
             account_reference = 'reference'
             transaction_desc = 'Description'
-            callback_url = 'https://codius.up.railway.app/callback'
+            callback_url = 'https://monadoll.tech/callback'
             # callback_url = 'https://permo.pythonanywhere.com/callback'
             
             try:
