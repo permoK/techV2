@@ -32,8 +32,8 @@ ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
     'https://codius.up.railway.app',
     'https://c92a-104-28-211-149.ngrok-free.app/',
+    'https://monadoll.tech',
     'https://*',
-    'http://*',
 
 ]
 
