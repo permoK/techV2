@@ -37,8 +37,6 @@ from .utils import get_access_token
 
 from django_daraja.mpesa.core import MpesaClient
 
-import logging
-
 ########## global variable #######
 # base_url = 'https://codius.up.railway.app/'
 base_url = 'https://monadoll.tech'
@@ -758,8 +756,6 @@ def stkpush(request):
     form = StkpushForm()
 
     return render(request, 'user/deposit.html', {"form":form})
-
-logger = logging.getLogger('django_daraja')
 
 @csrf_exempt
 def init_stk(request):

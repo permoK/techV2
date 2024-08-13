@@ -30,28 +30,15 @@ ALLOWED_HOSTS = ["*"]
 # =======
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://codius.up.railway.app',
-    'https://c92a-104-28-211-149.ngrok-free.app/',
     'https://monadoll.tech',
-    'https://*',
-
 ]
 
 
 CORS_ALLOWED_ORIGINS = [
-    'https://codius.up.railway.app',
+    'https://monadoll.tech/',
 ]
 
 
-SITE_ID = 1
-
-AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by email
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
 
 # Application definition
 
@@ -69,16 +56,7 @@ INSTALLED_APPS = [
     'investor.apps.InvestorConfig',
     'django_daraja',
 
-    # jobs
-    'django_cron',
 
-    # 'corsheaders',
-
-    # ALLAUTH
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
 ]
 
 MIDDLEWARE = [
@@ -93,7 +71,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'tech_investement.urls'
@@ -117,19 +94,6 @@ TEMPLATES = [
     },
 ]
 
-# Provider specific settings
-SOCIALACCOUNT_PROVIDERS = {
-    'github': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': 'Ov23liHk3KGtUB5OBn8g',
-            'secret': '783a02e3eb1288296ce7ba2aa977e56ad1d5b5f7',
-            'key': ''
-        }
-    }
-}
 
 WSGI_APPLICATION = 'tech_investement.wsgi.application'
 
@@ -201,7 +165,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
         'OPTIONS': {
-            'min_length': 6,
+            'min_length': 4,
         }
     },
 ]
@@ -235,52 +199,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#smtp config
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mikenjanja7@gmail.com'
-EMAIL_HOST_PASSWORD = '0723534084@Jackline'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-DEFAULT_FROM_EMAIL = ''
-
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': 'cron.log',
-        },
-    },
-    'root': {
-        'handlers': ['console', 'file'],
-        'level': 'INFO',
-    },
-}
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django_daraja': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
 
 
 ###################################### mpesa ########################################################################
