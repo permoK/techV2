@@ -103,8 +103,6 @@ def adminDashboard(request):
     context = {'message':message, 'total_amount':total_amount , "total_bonus":total_bonus, 'customers':user_profiles_count , 'deposited':deposits_count ,'withdrawed':withdrawals_count, 'products': [100, 200, 30, 40, 500]}
     return render(request, 'admin/adminDashboard.html', context)
 
-
-
 def admin_logout(request):
     logout(request)
     messages.success(request, 'You have successfully logged out')
@@ -120,7 +118,6 @@ def admin_workplace(request):
     return render(request, 'admin/admin_workplace.html', {'form': form})
 
 #*************users***************
-
 def all_users(request):
     # fetch all users
     users = UserAccount.objects.all()
@@ -160,7 +157,6 @@ def dashboard(request):
         total_profit += item.profit
     total_profit = "{:,.2f}".format(total_profit)
 
-    
     # get total withdraws money
     withdraws = Withdrawal.objects.filter(username=request.user.username)
     # add total money withdrawn
@@ -169,21 +165,14 @@ def dashboard(request):
         withdraws_count += withdraw.withdrawn
     withdraws_count = "{:,.2f}".format(withdraws_count)
 
-
-
     context = {'recommended_users': recommended_users, 'referral_bonus': bonus, 'user': request.user, 'user_profile': user_profile, 'balance':total_balance, 'purchased_items': purchased_items_count  ,'withdraws': withdraws_count ,'total_profit':total_profit,'products': [100, 200, 30, 40, 500], 'assets': assets}
+
     return render(request, 'user/dashboard.html', context)
 
 def users(request):
     return render(request, 'users.html')
 
 def user_profile(request):
-    # user_transactions = []
-    # user_deposit = []
-    # user_withdraw = []
-    # user_assets = []
-    # user_balance = []
-
     return render(request, 'user_profile.html')
 
 
@@ -733,12 +722,6 @@ def deposited(request):
     deposits_count = len(deposits)
     return HttpResponse(deposits_count)
 
-# refresh how many users have withdrawn
-# def withdraws(request):
-#     withdraws = Withdraw.objects.all()
-#     withdraws_count = len(withdraws)
-#     return HttpResponse(withdraws_count)
-
 # refresh balance
 def refresh_balance(request):
     total_amount = 0
@@ -810,139 +793,6 @@ def init_stk(request):
         return render(request, 'user/stkresult.html', context)
 
     return render(request, 'user/stkresult.html', context)
-
-# @csrf_exempt
-# def init_stk(request):
-
-#     if request.method == 'POST':
-#         form = StkpushForm(request.POST)
-#         if form.is_valid():
-#             phone = form.cleaned_data['phone_number']
-#             amount = form.cleaned_data['amount']
-            
-#             cl = MpesaClient()
-#             print(cl.access_token())
-#             # Use a Safaricom phone number that you have access to, for you to be able to view the prompt.
-#             phone_number = str(phone)
-#             amount = amount
-#             account_reference = 'reference'
-#             transaction_desc = 'Description'
-#             callback_url = 'https://codius.up.railway.app/callback'
-#             response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
-#             response = response.json()
-#             # print(response["ResponseCode"], response["MerchantRequestID"])
-#             context = {"response":response}
-
-#             try:
-#                 if response["ResponseCode"] == '0':
-#                     # Successful request
-#                     MpesaRequest.objects.create(
-#                             user=request.user,
-#                             amount=amount,
-#                             phone_number=phone,
-#                             description=response["ResponseDescription"],
-#                             merchant=response["MerchantRequestID"],
-#                             status=response["CustomerMessage"],
-#                             )
-#                     # return JsonResponse({'status': 'success', 'message': response.get("CustomerMessage", "")}, status=200)
-#                     print("success")
-#                 else:
-#                     # Failed request
-#                     MpesaRequest.objects.create(
-#                             user=request.user,
-#                             amount=amount,
-#                             phone_number=phone,
-#                             description=response["errorMessage"],
-#                             status="Failed",
-#                             )
-#                     # return JsonResponse({'status': 'failed', 'message': response.get("errorMessage", "Error processing request")}, status=400)
-#                     print("error")
-#             except Exception as e:
-#                 # Log the exception and save to database
-#                 MpesaRequest.objects.create(
-#                         user=request.user,
-#                         amount=amount,
-#                         phone_number=phone,
-#                         description=response["errorMessage"],
-#                         status="caught Exception",
-#                         )
-        
-#         return render(request, 'user/stkresult.html', context)
-
-# @login_required
-# @csrf_exempt
-# def init_stk(request):
-
-#     if request.method == 'POST':
-#         form = StkpushForm(request.POST)
-#         if form.is_valid():
-#             phone = form.cleaned_data['phone_number']
-#             amount = form.cleaned_data['amount']
-            
-#             endpoint = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
-#             access_token = get_access_token()
-#             headers = {"Authorization": f"Bearer {access_token}"}
-#             my_endpoint = base_url  # Replace with your actual base URL
-#             Timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-#             password = "174379" + "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919" + Timestamp
-#             datapass = base64.b64encode(password.encode('utf-8')).decode('utf-8')  # Decode to string
-
-#             data = {
-#                     "BusinessShortCode": "174379",
-#                     "Password": datapass,
-#                     "Timestamp": Timestamp,
-#                     "TransactionType": "CustomerPayBillOnline",
-#                     "PartyA": phone,
-#                     "PartyB": "174379",
-#                     "PhoneNumber": phone,
-#                     "CallBackURL": my_endpoint + "callback",
-#                     "AccountReference": "TestPay",
-#                     "TransactionDesc": "HelloTest",
-#                     "Amount": amount
-#                     }
-
-#             res = requests.post(endpoint, json=data, headers=headers)
-#             response = res.json()
-#             context = { "response":response }
-
-#             try:
-#                 if res.status_code == 200 and response.get("ResponseCode") == "0":
-#                     # Successful request
-#                     MpesaRequest.objects.create(
-#                             user=request.user,
-#                             amount=amount,
-#                             phone_number=phone,
-#                             description=response.get("ResponseDescription", ""),
-#                             merchant=response.get("MerchantRequestID", ""),
-#                             status=response.get("CustomerMessage", ""),
-#                             )
-#                     # return JsonResponse({'status': 'success', 'message': response.get("CustomerMessage", "")}, status=200)
-#                     print("success")
-#                 else:
-#                     # Failed request
-#                     MpesaRequest.objects.create(
-#                             user=request.user,
-#                             amount=amount,
-#                             phone_number=phone,
-#                             description=response.get("errorMessage", "Error processing request"),
-#                             status="Failed",
-#                             )
-#                     # return JsonResponse({'status': 'failed', 'message': response.get("errorMessage", "Error processing request")}, status=400)
-#                     print("error")
-#             except Exception as e:
-#                 # Log the exception and save to database
-#                 MpesaRequest.objects.create(
-#                         user=request.user,
-#                         amount=amount,
-#                         phone_number=phone,
-#                         description=str(e),
-#                         status="Exception",
-#                         )
-#             context = {"response": response}
-
-#             return render(request, 'user/stkresult.html', context)
-
-#     return render(request, 'user/stkresult.html', context)
 
 ####################### END STK ###############################
 
