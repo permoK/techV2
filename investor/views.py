@@ -749,7 +749,6 @@ def init_stk(request):
             amount = form.cleaned_data['amount']
             
             cl = MpesaClient()
-            logger.debug(f"Access Token: {cl.access_token()}")
             phone_number = str(phone)
             account_reference = 'reference'
             transaction_desc = 'Description'
@@ -759,7 +758,6 @@ def init_stk(request):
             try:
                 response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
                 response_data = response.json()
-                logger.debug(f"Response Data: {response_data}")
                 
                 if response_data.get("ResponseCode") == '0':
                     MpesaRequest.objects.create(
@@ -781,13 +779,10 @@ def init_stk(request):
                     )
                     context = {"response": response_data}
             except requests.exceptions.RequestException as e:
-                logger.error(f"Request Exception: {e}")
                 context = {"error": str(e)}
             except ValueError as e:
-                logger.error(f"Value Error: {e}")
                 context = {"error": str(e)}
             except Exception as e:
-                logger.error(f"Unexpected Error: {e}")
                 context = {"error": str(e)}
         
         return render(request, 'user/stkresult.html', context)
